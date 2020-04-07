@@ -1,0 +1,30 @@
+{
+  "name": "@codeceptjs/examples",
+  "version": "1.1.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "kaflan, davert",
+  "license": "ISC",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codecept-js/examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codecept-js/examples/issues"
+  },
+  "homepage": "https://github.com/codecept-js/examples#readme",
+  "description": "",
+  "devDependencies": {
+    "@codeceptjs/configure": "^0.4.0",
+    "@codeceptjs/ui": "^0.2.0",
+    "@wdio/selenium-standalone-service": "^5.16.10",
+    "codeceptjs": "^2.3.6",
+    "puppeteer": "^2.0.0",
+    "testcafe": "^1.7.0",
+    "webdriverio": "^5.16.11"
+  }
+}
