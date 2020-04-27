@@ -24,6 +24,13 @@ exports.config = {
   include: {
     TodosPage: './todomvc-tests/pages/todos.page.js'
   },
+  plugins: {
+    testomat: {
+      enabled: true,
+      require: '@testomatio/reporter/lib/adapter/codecept',
+      apiKey: 'bu8e29984sqd',
+    },
+  },
   bootstrap: null,
   mocha: {},
   name: 'codecept demo tests'
