@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@testomatio/reporter": "^0.1.2",
+    "check-tests": "^0.2.5",
     "dotenv": "^8.2.0"
   },
   "repository": {
