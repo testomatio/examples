@@ -13,26 +13,27 @@ This is a playground for your first steps in testing, so instead of installing i
 npm i
 ```
 
-This will install codeceptjs with puppeteer, webdriverio & testcafe packages. 
+This will install codeceptjs with puppeteer & reporter
 
-# Running Tests
 
-## Puppeteer
+# Publishing Results to Testomat.io
 
-Use `codecept.conf.js` to run tests with Puppeteer:
-
-```
-npx codeceptjs run --steps 
-```
-
-Run tests in headless mode:
+Get API key from a project in Testomat.io and set it as environment variable `TESTOMATIO`:
 
 ```
-HEADLESS=true npx codeceptjs run --steps 
+TESTOMATIO={apiKey} npx codeceptjs run --steps --grep "Mark as completed"
 ```
 
-Run tests in parallel with 3 workers (headless mode):
+## Configuration
 
-```
-HEADLESS=true npx codeceptjs run-workers 3 
+Testomatio repoter is a plugin and should be enabled in `codecept.conf.js`:
+
+```js
+plugins: {
+  testomatio: {
+    enabled: true,
+    require: '@testomatio/reporter/lib/adapter/codecept',
+    apiKey: process.env.TESTOMATIO,
+  },
+},
 ```

@@ -9,7 +9,8 @@
   "author": "kaflan, davert",
   "license": "ISC",
   "dependencies": {
-    "@testomatio/reporter": "^0.1.2"
+    "@testomatio/reporter": "^0.1.2",
+    "dotenv": "^8.2.0"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,7 @@
   "devDependencies": {
     "@codeceptjs/configure": "^0.4.0",
     "@codeceptjs/ui": "^0.2.0",
-    "@wdio/selenium-standalone-service": "^5.16.10",
     "codeceptjs": "^2.3.6",
-    "puppeteer": "^2.0.0",
-    "testcafe": "^1.7.0",
-    "webdriverio": "^5.16.11"
+    "puppeteer": "^2.0.0"
   }
 }

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { setHeadlessWhen } = require('@codeceptjs/configure');
 
 setHeadlessWhen(process.env.HEADLESS);
@@ -25,10 +27,10 @@ exports.config = {
     TodosPage: './todomvc-tests/pages/todos.page.js'
   },
   plugins: {
-    testomat: {
+    testomatio: {
       enabled: true,
       require: '@testomatio/reporter/lib/adapter/codecept',
-      apiKey: 'bu8e29984sqd',
+      apiKey: process.env.TESTOMATIO,
     },
   },
   bootstrap: null,
