@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@testomatio/reporter": "^0.1.6",
     "cucumber": "^6.0.5"
   },
   "devDependencies": {},
