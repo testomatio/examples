@@ -1,88 +1,51 @@
-This repo contains tests for TodoMVC application.
-Tests can be executed via different backends.
-
-![](todo.png)
+This repo contains tests for TodoMVC application with Testomat.io plugins
 
 # Installation
 
 This is a playground for your first steps in testing, so instead of installing it from NPM it is recommended to clone it from repo instead.
 
-1. Clone this repository.
-2. Install ALL dependencies:
+1) Clone this repository
+
+```
+git clone git@github.com:testomatio/examples.git && cd examples/codeceptjs-cucumber
+```
+
+2) Install dependencies via npm:
 
 ```
 npm i
 ```
 
-This will install codeceptjs with puppeteer, webdriverio & testcafe packages. 
+This will install codeceptjs+cucumber with puppeteer & Testomat.io reporter
 
-# Running Tests
+## Loading Tests to Testomat.io
 
-## Puppeteer
-
-Use `codecept.conf.js` to run tests with Puppeteer:
-
-```
-npx codeceptjs run --steps 
-```
-
-Run tests in headless mode:
+1. Create empty project in Testomat.io
+2. Obtain API key from Testomat.io
+2. Run `npx check-cucumber` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
 
 ```
-HEADLESS=true npx codeceptjs run --steps 
+TESTOMATIO={apiKey} npx check-cucumber -d todomvc-tests
 ```
 
-Run tests in parallel with 3 workers (headless mode):
+## Publishing Test Results to Testomat.io
+
+Get API key from a project in Testomat.io and set it as environment variable `TESTOMATIO`:
 
 ```
-HEADLESS=true npx codeceptjs run-workers 3 
+TESTOMATIO={apiKey} npx codeceptjs run
 ```
 
-## WebDriver
+### Configuration
 
-Use `codecept.webdriver.conf.js` to run tests with WebDriver in Chrome:
+Testomatio repoter is a plugin and should be enabled in `codecept.conf.js`:
 
+```js
+plugins: {
+  testomatio: {
+    enabled: true,
+    require: '@testomatio/reporter/lib/adapter/codecept',
+    apiKey: process.env.TESTOMATIO,
+  },
+},
 ```
-npx codeceptjs run -c codecept.webdriver.conf.js --steps 
-```
-
-Run tests in headless mode:
-
-```
-HEADLESS=true npx codeceptjs run -c codecept.webdriver.conf.js --steps 
-```
-
-Run tests in parallel with 3 workers (headless mode):
-
-```
-HEADLESS=true npx codeceptjs run-workers 3 -c codecept.webdriver.conf.js
-```
-
-## TestCafe
-
-Use `codecept.testcafe.conf.js` to run tests with TestCafe in Chrome:
-
-```
-npx codeceptjs run -c codecept.testcafe.conf.js --steps 
-```
-
-Run tests in headless mode:
-
-```
-HEADLESS=true npx codeceptjs run -c codecept.testcafe.conf.js --steps 
-```
-
-Run tests in parallel with 3 workers (headless mode):
-
-```
-HEADLESS=true npx codeceptjs run-workers 3 -c codecept.testcafe.conf.js
-```
-
-## Credits
-
-Created as part of codepress by Stefan Huber.
-Maintained by CodeceptJS Team.
-
-## LICENSE
-
-MIT
