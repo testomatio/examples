@@ -22,10 +22,10 @@ This will install codeceptjs+cucumber with puppeteer & Testomat.io reporter
 
 1. Create empty project in Testomat.io
 2. Obtain API key from Testomat.io
-2. Run `npx check-cucumber -c true` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
+2. Run `npx check-cucumber --codeceptjs` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
 
 ```
-TESTOMATIO={apiKey} npx check-cucumber -c true -d todomvc-tests
+TESTOMATIO={apiKey} npx check-cucumber --codeceptjs -d todomvc-tests
 ```
 
 ## Publishing Test Results to Testomat.io
