@@ -38,7 +38,7 @@ exports.config = {
     testomat: {
       enabled: true,
       require: '@testomatio/reporter/lib/adapter/codecept',
-      apiKey: 'bu8e29984sqd',
+      apiKey: process.env.TESTOMATIO,
     },
   },
   bootstrap: null,
