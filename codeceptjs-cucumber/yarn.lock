@@ -394,10 +394,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testomatio/reporter@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@testomatio/reporter/-/reporter-0.1.2.tgz#df445b53df8298091e877b8cc2f9b3b0a68b094e"
-  integrity sha512-NRlKJanetSdXgoo22p1mEPNcS6oeFuwbSe2QaMhLDdjUEPe6PN/j2FCFj4e/qHAhh9g+OB2lu/dF1Cr91G6LVw==
+"@testomatio/reporter@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@testomatio/reporter/-/reporter-0.1.7.tgz#a42924f0795c4373929ee37cb8bffa8bc6a173ed"
+  integrity sha512-N1diymPqpgX3kccxwCZq6+ejd0au7JeYIOJkYKzVRFJ2krvtUfE/gbpMEz1LU10HJAtzMwaIyvyHg7CJCpK6CA==
   dependencies:
     axios "^0.19.2"
     commander "^4.1.1"
