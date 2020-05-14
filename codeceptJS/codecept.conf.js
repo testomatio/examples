@@ -13,7 +13,7 @@ exports.config = {
       waitForTimeout: 5000,
       waitForNavigation: 'networkidle0',
       waitForAction: 0,
-      show: true,
+      show: false,
     },
 
     REST: {},
@@ -30,7 +30,7 @@ exports.config = {
     testomatio: {
       enabled: true,
       require: '@testomatio/reporter/lib/adapter/codecept',
-      apiKey: process.env.TESTOMATIO,
+      apiKey:  process.env.TESTOMATIO,
     },
   },
   bootstrap: null,
