@@ -40,6 +40,8 @@ TESTOMATIO={apiKey} npx jest run  -t "Mark as completed"
 
 Testomatio reporter is a plugin and should be enabled in `jest.conf.js`:
 
+Do not hard code apiKey and always use it as environment variable.
+
 ```js
 module.exports = {
   testEnvironment: "node",

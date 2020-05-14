@@ -40,6 +40,8 @@ TESTOMATIO={apiKey} npx codeceptjs run
 
 Testomatio repoter is a plugin and should be enabled in `codecept.conf.js`:
 
+Do not hard code apiKey and always use it as environment variable.
+
 ```js
 plugins: {
   testomatio: {
