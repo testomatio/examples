@@ -1,4 +1,4 @@
-This repo contains tests for Cypress tes application with Testomat.io plugins
+This repo contains tests for **Cypress.io test application** with Testomat.io plugins
 
 # Installation
 
@@ -25,8 +25,9 @@ This will install cypress & Testomat.io reporter
 2. Run `npx check-tests` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
 
 ```
-TESTOMATIO={apiKey} npx check-tests cypress "**/**.spec.js"  -d cypress
+TESTOMATIO={apiKey} npx check-tests cypress "**/**.spec.js" -d cypress
 ```
+> **Environment variables** It is recommended to store Testomatio API Key as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests. 
 
 ## Publishing Test Results to Testomat.io
 
