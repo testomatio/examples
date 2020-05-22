@@ -33,5 +33,5 @@ TESTOMATIO={apiKey} npx check-tests cypress "**/**.spec.js"  -d cypress
 Get API key from a project in Testomat.io:
 
 ```
-npx cypress run -R ./node_modules/@testomatio/reporter/lib/adapter/mocha.js --reporter-options apiKey={apiKey}
+npx cypress run -r ./node_modules/@testomatio/reporter/lib/adapter/mocha.js --reporter-options apiKey={apiKey}
 ```
