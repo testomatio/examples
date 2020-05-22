@@ -28,6 +28,8 @@ This will install jest & Testomat.io reporter
 TESTOMATIO={apiKey} npx check-tests jest "**/*{.,_}test.js"  -d Algorithms
 ```
 
+> **Environment variables** It is recommended to store Testomatio API Key as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests. 
+
 ## Publishing Test Results to Testomat.io
 
 Get API key from a project in Testomat.io and set it as environment variable `TESTOMATIO`:
