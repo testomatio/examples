@@ -1,4 +1,4 @@
-This repo contains tests for TodoMVC application with Testomat.io plugins
+This repo contains **CodeceptJS tests for TodoMVC application** with Testomat.io plugins
 
 # Installation
 
@@ -27,6 +27,8 @@ This will install codeceptjs with puppeteer & Testomat.io reporter
 ```
 TESTOMATIO={apiKey} npx check-tests codeceptjs "**/*{.,_}test.js"  -d todomvc_tests
 ```
+
+> **Environment variables** It is recommended to store Testomatio API Key as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests. 
 
 ## Publishing Test Results to Testomat.io
 
