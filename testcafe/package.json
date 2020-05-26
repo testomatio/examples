@@ -1,0 +1,14 @@
+{
+  "name": "testcafe-examples",
+  "version": "0.0.1",
+  "description": "This repository contains sample test file integrated with testomat.io",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "4.17.15",
+    "nanoid": "^2.1.9",
+    "testcafe": "^1.5.0"
+  },
+  "devDependencies": {
+    "mockdate": "^2.0.5"
+  }
+}
