@@ -6,7 +6,8 @@
   "dependencies": {
     "lodash": "4.17.15",
     "nanoid": "^2.1.9",
-    "testcafe": "^1.5.0"
+    "testcafe": "^1.5.0",
+    "testcafe-reporter-testomatio": "^0.1.1"
   },
   "devDependencies": {
     "mockdate": "^2.0.5"
