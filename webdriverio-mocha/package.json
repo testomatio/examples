@@ -1,0 +1,53 @@
+{
+  "name": "webdriver-mocha",
+  "version": "1.0.0",
+  "description": "Example testomatio project with Webdriverio + mocha",
+  "main": "./node_modules/.bin/wdio",
+  "scripts": {
+    "test": "wdio wdio.conf.js"
+  },
+  "keywords": [
+    "mocha",
+    "uitesting",
+    "webdriver",
+    "webdriverio",
+    "e2e",
+    "selenium",
+    "test automation",
+    "javascript"
+  ],
+  "author": "Serhat Bolsu <serhatbolsu@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@testomatio/reporter": "^0.1.9",
+    "@wdio/cli": "^6.0.13",
+    "@wdio/sync": "^6.0.12",
+    "chai": "^4.2.0",
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "@wdio/allure-reporter": "^6.0.12",
+    "@wdio/junit-reporter": "^6.0.12",
+    "@wdio/local-runner": "^6.0.13",
+    "@wdio/mocha-framework": "^6.0.13",
+    "@wdio/sauce-service": "^6.0.13",
+    "@wdio/selenium-standalone-service": "^6.0.12",
+    "@wdio/spec-reporter": "^6.0.12",
+    "chromedriver": "^80.0.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env"
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  }
+}
