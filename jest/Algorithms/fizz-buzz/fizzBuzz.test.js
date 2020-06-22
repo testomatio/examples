@@ -1,7 +1,7 @@
 import fizzBuzz from './fizzBuzz';
 
 describe('FizzBuzz', () => {
-  test('It should return coorect value', () => {
+  test('It should return FizBuzz array', () => {
     expect(fizzBuzz(15)).toStrictEqual([
       "1",
       "2",

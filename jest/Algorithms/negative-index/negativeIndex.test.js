@@ -7,7 +7,7 @@ describe('negativeIndex', () => {
     expect(fixture.toString()).toBe('foo,bar,baz');
   });
 
-  test('get values', () => {
+  test('get values for negative index too', () => {
     const fixture = negativeIndex(['foo', 'bar', 'baz']);
     expect(fixture[0]).toBe('foo');
     expect(fixture[1]).toBe('bar');
@@ -15,7 +15,7 @@ describe('negativeIndex', () => {
     expect(fixture[-2]).toBe('bar');
   });
 
-  test('set values', () => {
+  test('set values for negative index too', () => {
     const fixture = negativeIndex(['foo', 'bar', 'baz']);
     fixture[0] = 0;
     expect(fixture).toEqual([0, 'bar', 'baz']);

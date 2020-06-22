@@ -1,7 +1,7 @@
 import convertToTitle from './excelColumnTitle';
 
 describe('Convert Excel title', () => {
-  test('Should return correct values', () => {
+  test('Should convert number to excel title', () => {
     expect(convertToTitle(1)).toBe('A');
     expect(convertToTitle(2)).toBe('B');
     expect(convertToTitle(28)).toBe('AB');

@@ -1,7 +1,7 @@
 import reverse from './reverseInteger';
 
 describe('Reverse Integer', () => {
-  test('Should return correct values for Integers', () => {
+  test('Should return reversed integers for Integers', () => {
     expect(reverse(123)).toBe(321);
     expect(reverse(-123)).toBe(-321);
     expect(reverse(120)).toBe(21);

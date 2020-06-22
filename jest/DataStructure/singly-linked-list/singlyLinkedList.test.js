@@ -137,7 +137,7 @@ describe('Singly Linked List', () => {
     expect(list.length).toBe(1);
   });
 
-  it('Should reverse', () => {
+  it('Should reverse singly linked list', () => {
     const list = new SinglyLinkedList();
 
     expect(list.pop()).toBe(null);

@@ -1,7 +1,7 @@
 import animalSort from './animalSort';
 
 describe('animalSort', () => {
-  it('should return empty array if empty array is passed in', () => {
+  it('should return empty array if empty animal array is passed in', () => {
     expect(animalSort([])).toEqual([]);
   });
 

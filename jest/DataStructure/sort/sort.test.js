@@ -25,7 +25,7 @@ describe('Sorting Algorithms', () => {
     expect(mergeSortedArray([], [2, 3])).toStrictEqual([2, 3]);
   });
 
-  it('Should perform merge sort', () => {
+  it('Should perform merge sort on array', () => {
     expect(mergeSort([7, 3, 4, 2, 3, 5])).toStrictEqual([2, 3, 3, 4, 5, 7]);
     expect(mergeSort([6, 5, 4, 3, 2, 1])).toStrictEqual([1, 2, 3, 4, 5, 6]);
     expect(mergeSort([8, 1, 2, 3, 4, 5])).toStrictEqual([1, 2, 3, 4, 5, 8]);
