@@ -1,6 +1,6 @@
 import lengthOfLongestSubString from './lengthOfSubstring';
 
-describe('Should pass all the tests', () => {
+describe('Length of substring', () => {
   test('Should return largest length of a string', () => {
     expect(lengthOfLongestSubString('koushik')).toBe(6);
     expect(lengthOfLongestSubString('hello')).toBe(3);
