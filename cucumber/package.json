@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@testomatio/reporter": "^0.1.12",
+    "@testomatio/reporter": "latest",
     "cucumber": "^6.0.5"
   },
   "devDependencies": {},

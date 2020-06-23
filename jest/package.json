@@ -6,7 +6,7 @@
   "author": "Koushik Mohan <koushikmohan1996@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@testomatio/reporter": "^0.1.12"
+    "@testomatio/reporter": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
