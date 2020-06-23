@@ -12,6 +12,8 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 output
 videos
 
+package-lock.json
+yarn.lock
 # Runtime data
 pids
 *.pid
