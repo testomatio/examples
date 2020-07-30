@@ -10,6 +10,7 @@ Learn how you can import tests from popular JavaScript frameworks.
 * [Jest](https://github.com/testomatio/examples/tree/master/jest)
 * [Testcafe](https://github.com/testomatio/examples/tree/master/testcafe)
 * [webdriver.io](https://github.com/testomatio/examples/tree/master/webdriverio-mocha)
+* [Protractor](https://github.com/testomatio/examples/tree/master/protractor)
 
 Import your own tests by follwing steps in our demo projects.
 If you have questions - [raise an issue](https://github.com/testomatio/app/issues) or contact us in [Telegram](https://t.me/testomatio_chat) or [Slack](https://testomatio.herokuapp.com/)
