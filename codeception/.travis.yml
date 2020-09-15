@@ -1,0 +1,34 @@
+language: php
+sudo: false
+
+cache:
+  yarn: true
+  directories:
+    - $HOME/.composer/cache/files
+    - ./bin/.phpunit
+
+env:
+  global:
+    - SYMFONY_DEPRECATIONS_HELPER=weak
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.2
+    - php: 7.3
+    # 'php: nightly' is PHP 8.0
+    - php: 7.4snapshot
+  allow_failures:
+    - php: 7.4snapshot
+
+before_install:
+  - '[[ "$TRAVIS_PHP_VERSION" == "7.4snapshot" ]] || phpenv config-rm xdebug.ini'
+  - composer self-update
+
+install:
+  - COMPOSER_MEMORY_LIMIT=-1 composer update
+  - ./bin/console server:start
+  - ./vendor/bin/codecept build
+
+script:
+  - ./vendor/bin/codecept run

@@ -1,0 +1,26 @@
+version: '2'
+services:
+  codeception:
+    image: codeception/codeception
+    depends_on:
+      - firefox    
+      - web
+    volumes:
+      - ./src:/src      
+      - ./tests:/tests
+      - ./codeception.yml:/codeception.yml
+  web:
+    image: php:7-apache
+    depends_on:
+      - db  
+    volumes:
+      - .:/var/www/html      
+  db:
+    image: percona:5.6
+    ports:
+      - '3306'
+  firefox:
+    image: selenium/standalone-firefox-debug:2.53.0
+    ports:
+      - '4444'
+      - '5900'
