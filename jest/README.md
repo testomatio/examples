@@ -25,7 +25,7 @@ This will install jest & Testomat.io reporter
 2. Run `npx check-tests` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
 
 ```
-TESTOMATIO={apiKey} npx check-tests jest "**/*{.,_}test.js"  -d Algorithms
+TESTOMATIO={apiKey} npx check-tests jest "**/*{.,_}test.js"
 ```
 
 > **Environment variables** It is recommended to store Testomatio API Key as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests. 
