@@ -15,7 +15,7 @@ Data(accounts).Scenario('User can not register with not correct password or logi
   "email": current.email,
   "password": current.password
  };
- const { status } = await apiProvider().registerService().singup(user);
+ const { status } = await apiProvider().registerService().signup(user);
  assert.equal(status, current.status);
 });
 
@@ -24,6 +24,6 @@ Scenario('User can register with correct password and login', async({ I }) => {
   "email": 'janet.weaver@reqres.in',
   "password": 'q12345'
  };
- const { status } = await apiProvider().registerService().singup(user);
+ const { status } = await apiProvider().registerService().signup(user);
  assert.equal(status, 200);
 });
