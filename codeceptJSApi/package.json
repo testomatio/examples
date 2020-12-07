@@ -1,0 +1,24 @@
+{
+  "name": "codeceptjsapi",
+  "version": "0.0.1",
+  "description": "API test framework with codeceptjs",
+  "dependencies": {
+    "@testomatio/reporter": "^0.2.0",
+    "codeceptjs": "^3.0.2",
+    "faker": "^5.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codecept-js/examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codecept-js/examples/issues"
+  },
+  "homepage": "https://github.com/codecept-js/examples#readme",
+  "scripts": {
+    "test": "npx codeceptjs run",
+  },
+  "author": "mnmlsniper",
+  "license": "ISC"
+}
