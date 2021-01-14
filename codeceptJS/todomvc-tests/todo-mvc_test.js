@@ -1,6 +1,6 @@
 Feature('codepress demo')
 
-Before(async (I) => {
+Before(async ({ I }) => {
   I.amOnPage('http://todomvc.com/examples/angularjs/#/')
 
   I.say('Given I already have some todos')
@@ -9,7 +9,7 @@ Before(async (I) => {
     {title: 'Make it even better than cypress', completed: false},
   ]
 
-  I.executeScript((todoItems) => {
+  I.executeScript(({ todoItems }) => {
     localStorage.setItem('todos-angularjs', JSON.stringify(todoItems));
   }, todoItems)    
 
@@ -29,7 +29,7 @@ Before(async (I) => {
   I.waitForVisible('.new-todo')
 })
 
-Scenario('Create some todo items @smoke', async (I) => {
+Scenario('Create some todo items @smoke', async ({ I }) => {
   I.say('When I focus the todo field')
   I.click('.new-todo')
 
