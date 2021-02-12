@@ -1,0 +1,30 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CodeceptJS Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      grep:
+        description: 'A grep '
+        required: true
+        default: ''
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x      
+    - run: npm i
+      working-directory: codeceptJS
+    - run: npx codeceptjs run --grep "${{ github.event.inputs.grep }}"
+      working-directory: codeceptJS
+      env:
+        TESTOMATIO: "${{ secrets.TESTOMATIO_PROJECT_CODECEPTJS }}"
