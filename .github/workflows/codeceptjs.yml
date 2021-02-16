@@ -8,10 +8,10 @@ on:
     inputs:
       grep:
         description: 'A grep '
-        required: true
+        required: false
         default: ''
       testomatio:
-        required: true
+        required: false
 
 jobs:
   build:
