@@ -10,6 +10,8 @@ on:
         description: 'A grep '
         required: true
         default: ''
+      testomatio:
+        required: true
 
 jobs:
   build:
@@ -27,4 +29,4 @@ jobs:
     - run: npx codeceptjs run --grep "${{ github.event.inputs.grep }}"
       working-directory: codeceptJS
       env:
-        TESTOMATIO: "${{ secrets.TESTOMATIO_PROJECT_CODECEPTJS }}"
+        TESTOMATIO: "${{ github.event.inputs.testomatio }}"
