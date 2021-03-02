@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "API test framework with codeceptjs",
   "dependencies": {
-    "@testomatio/reporter": "^0.2.0",
-    "codeceptjs": "^3.0.2",
+    "@testomatio/reporter": "latest",
+    "codeceptjs": "^3.0.5",
     "faker": "^5.1.0"
   },
   "devDependencies": {},
