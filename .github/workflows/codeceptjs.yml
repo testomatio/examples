@@ -12,6 +12,8 @@ on:
         default: ''
       testomatio:
         required: false
+      browser:
+        required: false
 
 jobs:
   build:
@@ -24,6 +26,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x      
+    - run: echo ${{ github.event.inputs.browser }}
     - run: npm i
       working-directory: codeceptJS
     - run: npx codeceptjs run --grep "${{ github.event.inputs.grep }}"
