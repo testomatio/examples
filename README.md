@@ -3,6 +3,11 @@
 We prepared a set of demo projects which can easily be created from Testomatio app. 
 Learn how you can import tests from popular JavaScript frameworks.
 
+## ONLY Javascript global installer (linux and mac only)
+
+1. npm i
+2. npm run install-all
+
 ## JavaScript
 
 * [Cucumber](https://github.com/testomatio/examples/tree/master/cucumber)
