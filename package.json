@@ -1,0 +1,32 @@
+{
+  "name": "examples",
+  "version": "0.0.1",
+  "description": "simple global installer",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "concurrently \"npm run install-codeception\" \"npm run install-codeceptJS\" \"npm run install-codeceptjs-cucumber\" \"npm run install-codeceptJSApi\" \"npm run install-cucumber\" \"npm run install-cypress\" \"npm run install-jest\" \"npm run install-protractor\" \"npm run install-testcafe\" \"npm run install-webdriverio-mocha\" ",
+    "install-codeceptJSApi": "cd codeceptJSApi  && npm i",
+    "install-codeceptjs-cucumber": "cd codeceptjs-cucumber && npm i",
+    "install-codeceptJS": "cd codeceptJS && npm i",
+    "install-codeception": "cd codeception && npm i",
+    "install-cucumber": "cd cucumber && npm i",
+    "install-cypress": "cd cypress && npm i",
+    "install-jest": "cd jest && npm i",
+    "install-protractor": "cd protractor && npm i",
+    "install-testcafe": "cd testcafe && npm i",
+    "install-webdriverio-mocha": "cd webdriverio-mocha && npm i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaflan/examples.git"
+  },
+  "author": "kaflan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaflan/examples/issues"
+  },
+  "homepage": "https://github.com/kaflan/examples#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
