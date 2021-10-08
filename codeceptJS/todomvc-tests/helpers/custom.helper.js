@@ -8,16 +8,13 @@ const toString = sel => {
 }
 
 class CustomHelper extends Helper {
+    const client = this.helpers['Puppeteer'];
 
     async hover(selector) {
-        let client = this.helpers['Puppeteer'];
-
         await client.page.hover(toString(selector))
     }
 
     async typeText(text) {
-        let client = this.helpers['Puppeteer'];
-
         await client.page.keyboard.type(text)
     }
 
