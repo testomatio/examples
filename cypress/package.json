@@ -12,6 +12,6 @@
     "cypress": "^4.5.0"
   },
   "dependencies": {
-    "@testomatio/reporter": "latest"
+    "@testomatio/reporter": "^0.3.12"
   }
 }

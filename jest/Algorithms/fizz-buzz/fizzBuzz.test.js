@@ -1,7 +1,7 @@
 import fizzBuzz from './fizzBuzz';
 
-describe('FizzBuzz', () => {
-  test('It should return FizBuzz array', () => {
+describe('FizzBuzz @Sa5b47f02', () => {
+  test('It should return FizBuzz array @T42aa8d8f', () => {
     expect(fizzBuzz(15)).toStrictEqual([
       "1",
       "2",

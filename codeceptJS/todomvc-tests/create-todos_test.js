@@ -1,4 +1,4 @@
-Feature('@first Create Todos @step:06 @smoke @story:12345')
+Feature('@first Create Tasks @step:06 @smoke @story:12345')
 
 Before(async ({ I, TodosPage }) => {
   TodosPage.goto()
@@ -8,6 +8,45 @@ Before(async ({ I, TodosPage }) => {
  * Happy Path tests
  */
 Scenario('Create a new todo item', async ({ I, TodosPage }) => {
+  I.say('Given I have an empty todo list')
+
+  I.say('When I create a todo "foo"')
+  TodosPage.enterTodo('foo')
+
+  I.say('Then I see the new todo on my list')
+  TodosPage.seeNumberOfTodos(1)
+
+  I.saveScreenshot('create-todo-item.png')
+});
+
+Scenario('Create ouch another new todo item', async ({ I, TodosPage }) => {
+  I.say('Given I have an empty todo list')
+
+  I.say('When I create a todo "foo"')
+  TodosPage.enterTodo('foo')
+
+  I.say('Then I see the new todo on my list')
+  TodosPage.seeNumberOfTodos(1)
+
+  I.saveScreenshot('create-todo-item.png')
+});
+
+
+Scenario('No todo', async ({ I, TodosPage }) => {
+  I.say('Given I have an empty todo list')
+
+  I.say('When I create a todo "foo"')
+  TodosPage.enterTodo('foo')
+
+  I.say('Then I see the new todo on my list')
+  TodosPage.seeNumberOfTodos(1)
+
+  I.saveScreenshot('create-todo-item.png')
+});
+
+
+
+Scenario('Create another one plus new todo item', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
 
   I.say('When I create a todo "foo"')
