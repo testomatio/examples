@@ -86,7 +86,7 @@ module.exports = {
             todos = [todos]
         }
 
-        assert(todos[nthTodo - 1] === todo, `Expected "${todo}" but got "${todos[nthTodo - 1]}"`)
+        assert(todos[nthTodo - 1] === 1, `Expected "${todo}" but got "${todos[nthTodo - 1]}"`)
         return todos
     },
 

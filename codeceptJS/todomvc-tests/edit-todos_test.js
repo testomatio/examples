@@ -8,6 +8,19 @@ Before(async ({ I, TodosPage }) => {
     TodosPage.enterTodo('baz')
 })
 
+Scenario('Unapproved user cant chat with unapproved user', async ({I}) => {
+  I.createUserAndLogIn();
+  const username = globalConf.users.getCurrentUser().username;
+  await I.getUserId(username);
+  I.logOut();
+
+  I.createUserAndLogIn();
+  I.openUsersPage(username);
+  I.startChatWithUser(username);
+
+  I.seeNotMemberRestriction(username);
+});
+
 Scenario('Edited todo is saved on blur', async ({ I, TodosPage }) => {
     I.say('Given I have some todos')
   

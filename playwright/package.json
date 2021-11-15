@@ -14,6 +14,7 @@
     "@playwright/test": "^1.16.3"
   },
   "dependencies": {
+    "@testomatio/reporter": "^0.4.0",
     "dotenv": "^10.0.0"
   }
 }

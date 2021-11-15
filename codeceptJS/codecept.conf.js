@@ -8,7 +8,8 @@ exports.config = {
   tests: './todomvc-tests/**/*_test.js',
   output: './output',
   helpers: {
-    Puppeteer: {
+    Playwright: {
+      video: true,
       url: 'http://localhost',
       waitForTimeout: 5000,
       waitForNavigation: 'networkidle0',
@@ -29,7 +30,7 @@ exports.config = {
   plugins: {
     testomatio: {
       enabled: true,
-      require: '@testomatio/reporter/lib/adapter/codecept',
+      require: '/home/davert/projects/testomatio/reporter/lib/adapter/codecept',
       apiKey:  process.env.TESTOMATIO,
     },
   },
