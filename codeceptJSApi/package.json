@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/codecept-js/examples#readme",
   "scripts": {
-    "test": "npx codeceptjs run",
+    "test": "npx codeceptjs run"
   },
   "author": "mnmlsniper",
   "license": "ISC"
