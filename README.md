@@ -5,9 +5,10 @@ Learn how you can import tests from popular JavaScript frameworks.
 
 ## JavaScript
 
-* [Cucumber](https://github.com/testomatio/examples/tree/master/cucumber)
 * [CodeceptJS](https://github.com/testomatio/examples/tree/master/codeceptJS)
-* [CodeceptJS + cucumber](https://github.com/testomatio/examples/tree/master/codeceptjs-cucumber)
+* [CodeceptJS + Cucumber](https://github.com/testomatio/examples/tree/master/codeceptjs-cucumber)
+* [Playwright](https://github.com/testomatio/examples/tree/master/playwright)
+* [Cucumber](https://github.com/testomatio/examples/tree/master/cucumber)
 * [Cypress.io](https://github.com/testomatio/examples/tree/master/cypress)
 * [Jest](https://github.com/testomatio/examples/tree/master/jest)
 * [Testcafe](https://github.com/testomatio/examples/tree/master/testcafe)
