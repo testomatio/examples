@@ -1,0 +1,19 @@
+{
+  "name": "new-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e-examples": "playwright test --config e2e-examples/playwright.config.ts",
+    "test:e2e": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.16.3"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
