@@ -1,11 +1,11 @@
-import animalSort @Sfc3dca92 from './animalSort';
+import animalSort from './animalSort';
 
 describe('animalSort', () => {
-  it('should return empty array if empty animal array is passed in @T2091dd4e', () => {
+  it('should return empty array if empty animal array is passed in', () => {
     expect(animalSort([])).toEqual([]);
   });
 
-  it('should return a sorted array of animal objects by their number of legs @Td772d6b6', () => {
+  it('should return a sorted array of animal objects by their number of legs', () => {
     const arr = [
       { name: 'Dog', numberOfLegs: 4 },
       { name: 'Bird', numberOfLegs: 2 },
@@ -19,7 +19,7 @@ describe('animalSort', () => {
     expect(animalSort(arr)).toEqual(result);
   });
 
-  it('should also return sorted names of animals with same number of legs @T05fb5a6a', () => {
+  it('should also return sorted names of animals with same number of legs', () => {
     const arr = [
       { name: 'Cat', numberOfLegs: 4 },
       { name: 'Snake', numberOfLegs: 0 },
