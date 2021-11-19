@@ -87,7 +87,7 @@ Scenario('Todos containing weird characters', async ({ I, current, TodosPage }) 
 
   I.say('Then I see {Result}')
   if (current['Result'] === 'is in list') {
-    TodosPage.seeNthTodoEquals(1, current['Todo Text'])
+    await TodosPage.seeNthTodoEquals(1, current['Todo Text'])
   }
 })
 
