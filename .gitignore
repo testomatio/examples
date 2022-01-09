@@ -13,6 +13,7 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 output
 videos
+screenshots
 
 package-lock.json
 yarn.lock

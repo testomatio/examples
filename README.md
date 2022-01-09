@@ -10,6 +10,7 @@ Learn how you can import tests from popular JavaScript frameworks.
 * [Playwright](https://github.com/testomatio/examples/tree/master/playwright)
 * [Cucumber](https://github.com/testomatio/examples/tree/master/cucumber)
 * [Cypress.io](https://github.com/testomatio/examples/tree/master/cypress)
+* [Cypress.io + Cucumber](https://github.com/testomatio/examples/tree/master/cypress-cucumber)
 * [Jest](https://github.com/testomatio/examples/tree/master/jest)
 * [Testcafe](https://github.com/testomatio/examples/tree/master/testcafe)
 * [webdriver.io](https://github.com/testomatio/examples/tree/master/webdriverio-mocha)
