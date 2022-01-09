@@ -25,7 +25,7 @@ This will install cypress & Testomat.io reporter
 2. Run `npx check-cucumber` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
 
 ```
-TESTOMATIO={apiKey} npx check-cucumber@latest "**/*.feature" --dir features 
+TESTOMATIO={apiKey} npx check-cucumber@latest "**/*.feature" --dir cypress/integration/features 
 ```
 > **Environment variables** It is recommended to store Testomatio API Key as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests. 
 
