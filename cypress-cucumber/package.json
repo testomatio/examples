@@ -1,0 +1,22 @@
+{
+  "name": "cypress-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run -- --spec='cypress/integration/features/*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "9.2.0",
+    "cypress-cucumber-preprocessor": "4.3.1",
+    "mocha": "^9.1.3"
+  },
+  "dependencies": {
+    "@testomatio/reporter": "^0.4.6"
+  }
+}
