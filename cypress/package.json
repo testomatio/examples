@@ -9,9 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.5.0"
-  },
-  "dependencies": {
-    "@testomatio/reporter": "^0.3.12"
+    "@testomatio/reporter": "^0.5.0-beta.1",
+    "cypress": "^9.4.1"
   }
 }
