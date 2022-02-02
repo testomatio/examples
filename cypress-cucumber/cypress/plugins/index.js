@@ -12,9 +12,15 @@
 // the project's config changing)
 
 const cucumber = require('cypress-cucumber-preprocessor').default;
+const testomatioReporter = require('@testomatio/reporter/lib/adapter/cypress-plugin');
 
 module.exports = (on, config) => {
-  on('file:preprocessor', cucumber());
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+
+  on('file:preprocessor', cucumber());
+
+  testomatioReporter(on, config);
+
+  return config;
 };
