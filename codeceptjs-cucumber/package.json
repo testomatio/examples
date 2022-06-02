@@ -9,7 +9,8 @@
   "author": "kaflan, davert",
   "license": "ISC",
   "dependencies": {
-    "@testomatio/reporter": "latest"
+    "@testomatio/reporter": "latest",
+    "check-cucumber": "^0.5.5"
   },
   "repository": {
     "type": "git",
