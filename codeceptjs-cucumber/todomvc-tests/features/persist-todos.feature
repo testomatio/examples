@@ -1,4 +1,3 @@
-@S5c0e0e61
 Feature: Persist Todos
 
 Background:

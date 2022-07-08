@@ -1,4 +1,3 @@
-@Sa4126efa
 Feature: Edit/Delete Todos
 
 Background:

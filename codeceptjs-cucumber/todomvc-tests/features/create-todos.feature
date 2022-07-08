@@ -1,4 +1,3 @@
-@Sbcee2c92
 Feature: Create Todos with BDD
 
 Scenario: Create a single todo item @bdd

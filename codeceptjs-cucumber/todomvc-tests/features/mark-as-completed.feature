@@ -1,4 +1,3 @@
-@Sb79afb42
 Feature: Mark as completed
 
 Background:
