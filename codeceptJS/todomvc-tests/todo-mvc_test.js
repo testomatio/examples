@@ -1,4 +1,4 @@
-Feature('codepress demo')
+Feature('codepress demo @Sdac8e37c')
 
 Before(async ({ I }) => {
   I.amOnPage('http://todomvc.com/examples/angularjs/#/')
@@ -8,6 +8,8 @@ Before(async ({ I }) => {
     {title: 'Create a cypress like runner for CodeceptJS', completed: false},
     {title: 'Make it even better than cypress', completed: false},
   ]
+
+  I.waitForText('some text');
 
   I.executeScript(({ todoItems }) => {
     localStorage.setItem('todos-angularjs', JSON.stringify(todoItems));
@@ -29,7 +31,7 @@ Before(async ({ I }) => {
   I.waitForVisible('.new-todo')
 })
 
-Scenario('Create some todo items @smoke', async ({ I }) => {
+Scenario('Create some todo items @smoke @T36dac36f', async ({ I }) => {
   I.say('When I focus the todo field')
   I.click('.new-todo')
 

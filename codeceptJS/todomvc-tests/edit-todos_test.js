@@ -1,4 +1,4 @@
-Feature('Edit/Delete Todos @step-06')
+Feature('Edit/Delete Todos @step-06 @S15a1c5dd')
 
 Before(async ({ I, TodosPage }) => {
     TodosPage.goto()
@@ -8,10 +8,11 @@ Before(async ({ I, TodosPage }) => {
     TodosPage.enterTodo('baz')
 })
 
-Scenario('Unapproved user cant chat with unapproved user', async ({I}) => {
+Scenario('Unapproved user cant chat with unapproved user @T1ce5074b', async ({I}) => {
   I.createUserAndLogIn();
   const username = globalConf.users.getCurrentUser().username;
   await I.getUserId(username);
+
   I.logOut();
 
   I.createUserAndLogIn();
@@ -21,7 +22,7 @@ Scenario('Unapproved user cant chat with unapproved user', async ({I}) => {
   I.seeNotMemberRestriction(username);
 });
 
-Scenario('Edited todo is saved on blur', async ({ I, TodosPage }) => {
+Scenario('Edited todo is saved on blur @Tc51caa87', async ({ I, TodosPage }) => {
     I.say('Given I have some todos')
   
     I.say('When I edit the first todo')
@@ -33,7 +34,7 @@ Scenario('Edited todo is saved on blur', async ({ I, TodosPage }) => {
     I.saveScreenshot('edited-todo-saved-on-blur.png')
 })
 
-Scenario('Delete todos', async ({ I, TodosPage }) => {
+Scenario('Delete todos @T99544623', async ({ I, TodosPage }) => {
     I.say('Given I have some todos')
     I.say('When I delete the first todo')
     TodosPage.deleteNthTodo(1)

@@ -2,6 +2,9 @@ import animalSort from './animalSort';
 
 describe('animalSort', () => {
   it('should return empty array if empty animal array is passed in', () => {
+
+    if (Math.random() > 0.5) throw new Error('Fail');
+
     expect(animalSort([])).toEqual([]);
   });
 

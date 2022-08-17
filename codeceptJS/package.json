@@ -9,11 +9,11 @@
   "author": "kaflan, davert",
   "license": "ISC",
   "dependencies": {
-    "@testomatio/reporter": "^0.3.16",
+    "@testomatio/reporter": "^0.6.3",
     "axios": "^0.19.2",
-    "check-tests": "^0.5.0",
+    "check-tests": "^0.7.6",
     "dotenv": "^8.6.0",
-    "playwright": "^1.16.3"
+    "playwright": "^1.23.0"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,6 @@
   "devDependencies": {
     "@codeceptjs/configure": "^0.4.0",
     "@codeceptjs/ui": "^0.2.0",
-    "codeceptjs": "^3.2.1",
-    "puppeteer": "^2.0.0"
+    "codeceptjs": "^3.3.3"
   }
 }

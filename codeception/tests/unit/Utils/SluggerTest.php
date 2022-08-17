@@ -12,6 +12,7 @@
 namespace App\Tests\Utils;
 
 use App\Utils\Slugger;
+use Codeception\Test\Unit;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -24,9 +25,10 @@ use PHPUnit\Framework\TestCase;
  *     $ cd your-symfony-project/
  *     $ ./vendor/bin/phpunit
  */
-class SluggerTest extends TestCase
+class SluggerTest extends Unit
 {
     /**
+     * @skip
      * @dataProvider getSlugs
      */
     public function testSlugify(string $string, string $slug)

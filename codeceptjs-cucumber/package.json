@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@testomatio/reporter": "latest",
-    "check-cucumber": "^0.5.5"
+    "check-cucumber": "^0.5.8"
   },
   "repository": {
     "type": "git",

@@ -6,6 +6,7 @@
 # Remove this suite if you don't use frameworks
 
 actor: FunctionalTester
+error_level: E_ALL & ~E_USER_DEPRECATED
 modules:
     enabled:
         - Symfony:

@@ -1,4 +1,4 @@
-Feature('@first Create Tasks @step:06 @smoke @story:12345')
+Feature('@first Create Tasks @step:06 @smoke @story:12345 @S1db8fa49')
 
 Before(async ({ I, TodosPage }) => {
   TodosPage.goto()
@@ -7,7 +7,7 @@ Before(async ({ I, TodosPage }) => {
 /**
  * Happy Path tests
  */
-Scenario('Create a new todo item', async ({ I, TodosPage }) => {
+Scenario('Create a new todo item @T49e5b6f5', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
 
   I.say('When I create a todo "foo"')
@@ -19,20 +19,7 @@ Scenario('Create a new todo item', async ({ I, TodosPage }) => {
   I.saveScreenshot('create-todo-item.png')
 });
 
-Scenario('Create ouch another new todo item', async ({ I, TodosPage }) => {
-  I.say('Given I have an empty todo list')
-
-  I.say('When I create a todo "foo"')
-  TodosPage.enterTodo('foo')
-
-  I.say('Then I see the new todo on my list')
-  TodosPage.seeNumberOfTodos(1)
-
-  I.saveScreenshot('create-todo-item.png')
-});
-
-
-Scenario('No todo', async ({ I, TodosPage }) => {
+Scenario('Create ouch another new todo item @T63ce9526', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
 
   I.say('When I create a todo "foo"')
@@ -45,8 +32,7 @@ Scenario('No todo', async ({ I, TodosPage }) => {
 });
 
 
-
-Scenario('Create another one plus new todo item', async ({ I, TodosPage }) => {
+Scenario('No todo @T1d942fbd', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
 
   I.say('When I create a todo "foo"')
@@ -58,7 +44,21 @@ Scenario('Create another one plus new todo item', async ({ I, TodosPage }) => {
   I.saveScreenshot('create-todo-item.png')
 });
 
-Scenario('Create multiple todo items', async ({ I, TodosPage }) => {
+
+
+Scenario('Create another one plus new todo item @T6b8b0d73', async ({ I, TodosPage }) => {
+  I.say('Given I have an empty todo list')
+
+  I.say('When I create a todo "foo"')
+  TodosPage.enterTodo('foo')
+
+  I.say('Then I see the new todo on my list')
+  TodosPage.seeNumberOfTodos(1)
+
+  I.saveScreenshot('create-todo-item.png')
+});
+
+Scenario('Create multiple todo items @Tcb4fbc1f', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
   I.say('When I create todos "foo", "bar" and "baz"')
   TodosPage.enterTodo('foo')
@@ -81,17 +81,17 @@ examples.add(['Very looooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 examples.add(['Todo with html code <script>alert("hello")</script>', 'is in list'])
 
 Data(examples).
-Scenario('Todos containing weird characters', async ({ I, current, TodosPage }) => {
+Scenario('Todos containing weird characters @Tffc5dbc2', async ({ I, current, TodosPage }) => {
   I.say('When I enter {Todo Text}')
   TodosPage.enterTodo(current['Todo Text'])
 
   I.say('Then I see {Result}')
   if (current['Result'] === 'is in list') {
-    TodosPage.seeNthTodoEquals(1, current['Todo Text'])
+    await TodosPage.seeNthTodoEquals(1, current['Todo Text'])
   }
 })
 
-Scenario('Text input field should be cleared after each item', async ({ I, TodosPage }) => {
+Scenario('Text input field should be cleared after each item @Tbed09647', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
   I.say('When I enter a new todo')
   TodosPage.enterTodo('foo')
@@ -100,7 +100,7 @@ Scenario('Text input field should be cleared after each item', async ({ I, Todos
   TodosPage.seeEmptyTodoInput()
 })
 
-Scenario('Text input should be trimmed', async ({ I, TodosPage }) => {
+Scenario('Text input should be trimmed @T2e3fde78', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
   I.say('When I enter a todo with whitespace around the text')
   TodosPage.enterTodo('       Todo with lots of whitespace around       ')
@@ -110,7 +110,7 @@ Scenario('Text input should be trimmed', async ({ I, TodosPage }) => {
 })
 
 
-Scenario('New todos should be added to the bottom of the list', async ({ I, TodosPage }) => {
+Scenario('New todos should be added to the bottom of the list @T68311869', async ({ I, TodosPage }) => {
   I.say('Given I added some todos')
   TodosPage.enterTodo('first')
   TodosPage.enterTodo('second')
@@ -124,7 +124,7 @@ Scenario('New todos should be added to the bottom of the list', async ({ I, Todo
 })
 
 
-Scenario('Footer should be visible when adding TODOs', async ({ I, TodosPage }) => {
+Scenario('Footer should be visible when adding TODOs @T1b740cf3', async ({ I, TodosPage }) => {
   I.say('Given I am adding todos')
   TodosPage.seeFooter()
   I.say('When I add a todo')

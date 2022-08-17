@@ -19,7 +19,7 @@
   "author": "Serhat Bolsu <serhatbolsu@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@testomatio/reporter": "latest",
+    "@testomatio/reporter": "^0.6.3",
     "@wdio/cli": "^6.12.1",
     "@wdio/reporter": "^7.8.0",
     "@wdio/sync": "^6.0.12",

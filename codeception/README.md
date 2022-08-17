@@ -2,7 +2,7 @@ Testomatio Demo Tests for Codeception.
 
 ## Requirements
 
-* PHP 7.2+ with pdo_sqlite extension is required.
+* PHP 8.0+ with pdo_sqlite extension is required.
 * [Composer](https://getcomposer.org) Package Manager
 
 ## Installation

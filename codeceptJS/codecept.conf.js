@@ -30,7 +30,8 @@ exports.config = {
   plugins: {
     testomatio: {
       enabled: true,
-      require: '@testomatio/reporter/lib/adapter/codecept',
+      require: '/home/davert/projects/testomatio/reporter/lib/adapter/codecept',
+      // require: '@testomatio/reporter/lib/adapter/codecept',
       apiKey:  process.env.TESTOMATIO,
     },
   },

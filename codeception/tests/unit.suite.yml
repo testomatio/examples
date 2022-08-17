@@ -3,6 +3,7 @@
 # Suite for unit or integration tests.
 
 actor: UnitTester
+error_level: E_ALL & ~E_USER_DEPRECATED
 modules:
     enabled:
         - Asserts

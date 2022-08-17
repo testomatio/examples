@@ -1,35 +1,38 @@
-# Cypress Gherkin
+This repo contains tests for **Cypress.io test application in Gherkin language** with Testomat.io plugins
 
-This repo contains tests for **Cypress.io test application in Gherkin language** with [Testomat.io](https://testomat.io/) plugins.
+# Installation
 
-## Installation
+This is a playground for your first steps in testing, so instead of installing it from NPM it is recommended to clone it from repo instead.
 
-This is a playground for your first steps in testing, so instead of installing it from [NPM](https://www.npmjs.com/) it is recommended to clone it from repo instead.
+1) Clone this repository
 
-```bash
+```
 git clone git@github.com:testomatio/examples.git && cd examples/cypress
 ```
 
-Install dependencies.
-```bash
+2) Install dependencies via npm:
+
+```
 npm i
 ```
 
-## Usage
+This will install cypress & Testomat.io reporter
 
-## Loading Tests
+## Loading Tests to Testomat.io
 
-1. Create empty project in [Testomat.io](https://testomat.io/).
-2. Obtain `{API_KEY}` from [Testomat.io](https://testomat.io/).
-2. Run `npx check-tests` to upload tests data into testomat.io. Pass `{API_KEY}` as `TESTOMATIO` environment variable:
+1. Create empty project in Testomat.io
+2. Obtain API key from Testomat.io
+2. Run `npx check-cucumber` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
 
-```bash
-TESTOMATIO={API_KEY} npx check-tests cypress "**/**.spec.js" -d cypress/integration/features
 ```
-> **Environment variables** It is recommended to store Testomatio `{API_KEY}` as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests. 
+TESTOMATIO={apiKey} npx check-cucumber@latest "**/*.feature" --dir cypress/integration/features
+```
+> **Environment variables** It is recommended to store Testomatio API Key as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests.
 
-## Publishing Test Results
+## Publishing Test Results to Testomat.io
 
-```bash
+Get API key from a project in Testomat.io:
+
+```
 TESTOMATIO={API_KEY} npx cypress run
 ```
