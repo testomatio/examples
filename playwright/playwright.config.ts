@@ -8,7 +8,7 @@ const config: PlaywrightTestConfig = {
   // Timeout per test
   timeout: 30 * 1000,
   // Test directory
-  testDir: path.join(__dirname, 'e2e'),
+  testDir: __dirname,
   // If a test fails on CI, retry it additional 2 times
   retries: process.env.CI ? 2 : 0,
   // Artifacts folder where screenshots, videos, and traces are stored.
@@ -22,7 +22,7 @@ const config: PlaywrightTestConfig = {
   // },
   reporter: [
     ['list'],
-    ['/home/davert/projects/testomatio/reporter/lib/adapter/playwright.js', {
+    ['@testomatio/reporter/adapter/playwright.js', {
       apiKey: process.env.TESTOMATIO,
     }]
   ],
