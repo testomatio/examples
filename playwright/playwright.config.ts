@@ -22,7 +22,7 @@ const config: PlaywrightTestConfig = {
   // },
   reporter: [
     ['list'],
-    ['@testomatio/reporter/adapter/playwright.js', {
+    ['@testomatio/reporter/lib/adapter/playwright.js', {
       apiKey: process.env.TESTOMATIO,
     }]
   ],
