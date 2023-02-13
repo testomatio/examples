@@ -23,6 +23,15 @@ describe("Array", function() {
     expect(arr.length).to.equal(4);
   });
 
+  it("should fail and return -1 as the value is not present", function() {
+    expect(arr.indexOf(4)).to.equal(3);
+  });
+  
+  it.skip("should be skipped", function() {
+    arr.push(4);
+    expect(arr.length).to.equal(4);
+  });  
+    
   // Test Case 4
   it("should return the first element of the array", function() {
     expect(arr[0]).to.equal(1);
