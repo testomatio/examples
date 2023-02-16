@@ -1,4 +1,5 @@
-This repo contains simple template for testing project with Mocha + TypeScript + Testomat.io plugins.
+# 📊 Mocha + TypeScript + Multi Reporters Example 
+This repo contains simple template for testing project with Multiple reports based on the stack = Mocha + TypeScript + Spec report & Testomat.io plugins.
 
 # Installation
 This is a playground for your first steps in testing, so instead of installing it from NPM it is recommended to clone it from repo instead.
