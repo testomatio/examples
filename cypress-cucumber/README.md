@@ -19,6 +19,18 @@ git clone git@github.com:testomatio/examples.git && cd examples/cypress-cucumber
 npm i
 ```
 
+### Confirm test results localy
+
+To open the example with the Cypress browser and execute .feature specs:
+```
+npx cypress open
+```
+
+To execute tests in console log only(get screens + videos + logs):
+```
+npx cypress run
+```
+
 This will install cypress & Testomat.io reporter
 
 ## Loading Tests to Testomat.io
@@ -38,11 +50,4 @@ Get API key from a project in Testomat.io:
 
 ```
 TESTOMATIO={API_KEY} npx cypress run
-```
-
-## Confirm test results localy
-
-To open example using cypress browser use:
-```
-npx cypress open
 ```

@@ -25,6 +25,6 @@ Then("Home menu should be home", () => {
   homePage.verifyHomepageActiveMenuAttr();
 });
 
-Given('Verify additional links <count>', (count) => {
+Given('Verify additional links {int}', (count) => {
   homePage.verifyLinkCount(count);
 });
