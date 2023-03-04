@@ -39,6 +39,9 @@ Get API key from a project in Testomat.io:
 ```
 TESTOMATIO={API_KEY} npx cypress run
 ```
+
+## Confirm test results localy
+
 To open example using cypress browser use:
 ```
 npx cypress open

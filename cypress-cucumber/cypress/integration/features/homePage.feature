@@ -12,6 +12,12 @@ Feature: Home page verification
   Scenario: I verify that Home menu attr equal /home
     Then Home menu should be home
 
+  Scenario: TOP h1 header should be visisble
+    Then I should see the Playground h1 header at the TOP page part
+
+  Scenario: cube image should be visible
+    Then I should see the cude image
+
   Scenario: I want to search the links in Home page
     Given Verify additional links <count>
 
