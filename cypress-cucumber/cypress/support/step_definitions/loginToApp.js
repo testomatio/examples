@@ -22,3 +22,15 @@ Then("I should see successfully message", () => {
 Then("I should see invalid message", () => {
   loginPage.verifyLoginStatus("Invalid username/password");
 });
+
+Then("I should see the the h3 header", () => {
+  loginPage.verifyH3Header("Sample App");
+});
+
+Then("I should see the Login button", () => {
+  loginPage.loginBtnIsVisible();
+});
+
+Then("I should see placeholder in User Name field", () => {
+  loginPage.verifyUserNamePlaceholder();
+});

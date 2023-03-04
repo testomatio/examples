@@ -10,6 +10,17 @@ class LoginPage {
     verifyLoginStatus(status) {
         return cy.get('#loginstatus').should('have.text', status);
     }
+    verifyH3Header(header) {
+        return cy.get('.container > h3').should('have.text', header);
+    }
+    loginBtnIsVisible() {
+        return cy.get('#login').should('be.visible');
+    }
+    verifyUserNamePlaceholder() {
+        return cy.get('input[name="UserName"]')
+                .should('have.attr', 'placeholder')
+                .and('eq', 'User Name');
+    }
 }
 
 const loginPage = new LoginPage();
