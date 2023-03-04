@@ -7,7 +7,7 @@ This is a playground for your first steps in testing, so instead of installing i
 1) Clone this repository:
 
 ```
-git clone git@github.com:testomatio/examples.git && cd examples/mocha-typescript
+git clone git@github.com:testomatio/examples.git && cd examples/mocha-ts-multi-reporters
 ```
 ## Requirements:
  **in order to run this project, NodeJS (version 18+) must be installed**
