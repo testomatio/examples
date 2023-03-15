@@ -33,7 +33,7 @@ Examples:
 
 > No need to pass `TESTOMATIO_CREATE=1`. This param is already set by default when using `newman-reporter-testomatio`.
 
-## Troubleshoting
+## Troubleshooting
 ### If you got an error running your collection, read next
 \
 `newman` and `newman-reporter-testomatio` should be installed in the same directory.
