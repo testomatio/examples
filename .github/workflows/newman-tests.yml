@@ -8,15 +8,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
-  build:
+  newman-tests:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: newman
+    working-directory: newman
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
         with:
           node-version: 18.x
       - run: npm i
-        working-directory: newman
-      - run: TESTOMATIO=m6ef70356h7cnpm run test
-        working-directory: newman
+      - run: TESTOMATIO=m6ef70356h7c npm run test
