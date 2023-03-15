@@ -1,5 +1,5 @@
 {
-  "name": "example-project-for-newman-testomatio-reporter",
+  "name": "example-project-for-newman-reporter-testomatio",
   "version": "0.0.1",
   "description": "Example project for testomatio reporter using newman",
   "main": "index.js",
