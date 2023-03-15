@@ -8,7 +8,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  newman-tests:
+  newman-global:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: newman
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+      - run: npm i newman-reporter-testomatio -g
+      - run: TESTOMATIO=m6ef70356h7c newman run collection.json -e env.json -r testomatio
+
+  newman-local:
     runs-on: ubuntu-latest
     defaults:
       run:
