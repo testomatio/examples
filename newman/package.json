@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "newman": "^5.3.2",
-    "newman-reporter-testomatio": "^0.1.0"
+    "newman-reporter-testomatio": "latest"
   }
 }
