@@ -4,16 +4,31 @@ This repo contains tests for **Cypress.io test application in Gherkin language**
 
 This is a playground for your first steps in testing, so instead of installing it from NPM it is recommended to clone it from repo instead.
 
+**If you're using `npm` to install this example, we support only _Node.js_ 18.x and above**
+|So you should install latest Node.js or switch using `nvm`
+
 1) Clone this repository
 
 ```
-git clone git@github.com:testomatio/examples.git && cd examples/cypress
+git clone git@github.com:testomatio/examples.git && cd examples/cypress-cucumber
 ```
 
 2) Install dependencies via npm:
 
 ```
 npm i
+```
+
+### Confirm test results localy
+
+To open the example with the Cypress browser and execute .feature specs:
+```
+npx cypress open
+```
+
+To execute tests in console log only(get screens + videos + logs):
+```
+npx cypress run
 ```
 
 This will install cypress & Testomat.io reporter

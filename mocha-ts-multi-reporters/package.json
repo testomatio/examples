@@ -1,0 +1,40 @@
+{
+  "name": "mocha-typescript",
+  "version": "1.0.1",
+  "description": "Example testomatio project with Mocha+TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "mocha",
+    "typescript",
+    "e2e",
+    "test automation"
+  ],
+  "author": "Vitalii Mykhailiuk (vmykhailiuk.chanel@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "10.2.0",
+    "typescript": "4.9.4",
+    "ts-node": "10.9.1",
+    "dotenv": "16.0.3",
+    "mocha-multi-reporters": "1.5.1",
+    "chai": "4.3.7",
+    "@types/mocha": "10.0.1",
+    "@types/node": "18.11.18",
+    "@types/chai": "4.3.4",
+    "@testomatio/reporter": "^0.7.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.48.2",
+    "@typescript-eslint/parser": "5.48.2",
+    "eslint": "8.32.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-import-resolver-typescript": "3.5.3",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-no-only-tests": "3.1.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.8.3"
+  }
+}
