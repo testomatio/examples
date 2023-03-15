@@ -1,0 +1,23 @@
+name: newman tests
+on:
+  pull_request:
+    branches: [master]
+
+concurrency:
+  group: newman-tests-${{github.event.pull_request.number}}
+  cancel-in-progress: true
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: newman
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+      - run: npm i
+      - run: TESTOMATIO=m6ef70356h7cnpm run test
