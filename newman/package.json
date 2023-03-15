@@ -1,7 +1,7 @@
 {
   "name": "example-project-for-newman-testomatio-reporter",
   "version": "0.0.1",
-  "description": "Example project for tesomatio-reporter using newman",
+  "description": "Example project for testomatio reporter using newman",
   "main": "index.js",
   "scripts": {
     "test": "npx newman run collection.json -e env.json -r testomatio",
