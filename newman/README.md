@@ -10,8 +10,8 @@ This is example project for [newman-reporter-testomatio](https://www.npmjs.com/p
 `npm i`
 
 2. Run tests
-- `TESTOMATIO=<token> npm run test`
-- `TESTOMATIO=<token> npm run test:fail`
+- `TESTOMATIO=<apiKey> npm run test`
+- `TESTOMATIO=<apiKey> npm run test:fail`
 
 
 ### Running in **your** project
@@ -21,20 +21,20 @@ This is example project for [newman-reporter-testomatio](https://www.npmjs.com/p
 
 2. Run collection and specify `testomatio` as reporter:
 \
-`TESTOMATIO=<token> npx newman run <collection_name> -e <environment> -r testomatio `
+`TESTOMATIO=<apiKey> npx newman run <collection_name> -e <environment> -r testomatio `
 \
 > -e (environment) is optional param; others are required
 
 Examples:
 \
-`TESTOMATIO=<token> npx newman run collection.json -e env.json -r testomatio`
+`TESTOMATIO=<apiKey> npx newman run collection.json -e env.json -r testomatio`
 \
-`TESTOMATIO=<token> npx newman run collection_fail.json -e env.json -r testomatio`
+`TESTOMATIO=<apiKey> npx newman run collection_fail.json -e env.json -r testomatio`
 
 > No need to pass `TESTOMATIO_CREATE=1`. This param is already set by default when using `newman-reporter-testomatio`.
 
-## Troubleshoting
-### If you got an error running your collection, read next
+## Troubleshooting
+### If you got an error running your collection _("could not find testomatio reporter")_, read next
 \
 `newman` and `newman-reporter-testomatio` should be installed in the same directory.
 - If you run your tests using **globally** installed newman (`newman run ...`):
