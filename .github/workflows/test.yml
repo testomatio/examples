@@ -10,5 +10,6 @@ jobs:
       - run: echo $GITHUB_REPOSITORY
       - run: echo ${{ github.workflow }}
       - run: echo ${{ github.token }}
+      - run: echo $GITHUB_TOKEN
       - run: cd jest && npm i
       - run: cd jest && DEBUG=@testomatio/reporter:pipe:github TESTOMATIO=yapff28430mu GH_PAT=$GITHUB_TOKEN TESTOMATIO_URL=https://beta.testomat.io npm run test animal-sort/
