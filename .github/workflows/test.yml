@@ -9,4 +9,4 @@ jobs:
       - run: echo $GITHUB_REF
       - run: echo $GITHUB_REPOSITORY
       - run: echo ${{ github.workflow }}
-      - run: TESTOMATIO=yapff28430mu TESTOMATIO_URL=https://beta.testomat.io GH_PAT=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 GITHUB_REF=refs/pull/36/merge GITHUB_REPOSITORY=testomatio/examples npm run test animal-sort/
+      - run: cd jest && DEBUG=@testomatio/reporter:pipe:github TESTOMATIO=yapff28430mu TESTOMATIO_URL=https://beta.testomat.io npm run test animal-sort/
