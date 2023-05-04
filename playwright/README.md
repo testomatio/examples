@@ -16,6 +16,12 @@ git clone git@github.com:testomatio/examples.git && cd examples/playwright
 npm i
 ```
 
+2.1) Run tests to check if they work (via npm):
+
+```
+npm run test:e2e-examples
+```
+
 This will install Playwright with puppeteer & Testomat.io reporter
 
 ## Loading Tests to Testomat.io
