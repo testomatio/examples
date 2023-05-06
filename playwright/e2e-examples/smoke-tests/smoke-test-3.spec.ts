@@ -14,8 +14,8 @@ test.describe(
             });
         });
 
-        test.describe.skip('Check home page url(skip)', () => {
-            test('get started link', async ({ page }) => {
+        test.describe.skip('Check home page url (skip)', () => {
+            test('get started link (skip)', async ({ page }) => {
                 // Access to the basic page  
                 await page.goto('https://playwright.dev/');
 
@@ -24,8 +24,8 @@ test.describe(
             });
         });
 
-        test.describe.fixme('Check home page url(fixme)', () => {
-            test('get started link', async ({ page }) => {
+        test.describe.fixme('Check home page url (fixme)', () => {
+            test('get started link (fixme)', async ({ page }) => {
                 // Access to the basic page  
                 await page.goto('https://playwright.dev/');
 

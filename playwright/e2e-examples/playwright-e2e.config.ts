@@ -9,5 +9,12 @@ const config: PlaywrightTestConfig = {
     port: 4345,
     cwd: __dirname,
   },
+  testMatch: '*e2e-tests/*.spec.ts',
+  reporter: [
+    ['list'],
+    ['@testomatio/reporter/lib/adapter/playwright.js', {
+      apiKey: process.env.TESTOMATIO,
+    }]
+  ]
 };
 export default config;
