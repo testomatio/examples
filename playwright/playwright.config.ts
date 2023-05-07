@@ -1,5 +1,4 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
-import path from 'path';
 
 require('dotenv').config()
 
@@ -16,10 +15,11 @@ const config: PlaywrightTestConfig = {
 
   // Run your local dev server before starting the tests:
   // https://playwright.dev/docs/test-advanced#launching-a-development-web-server-during-the-tests
-  // webServer: {
-  //   command: 'npm run start',
-  //   port: 3000,
-  // },
+  webServer: {
+    command: 'node ./e2e-examples/e2e-tests/server',
+    port: 4345,
+    cwd: __dirname,
+  },
   reporter: [
     ['list'],
     ['@testomatio/reporter/lib/adapter/playwright.js', {
@@ -41,14 +41,14 @@ const config: PlaywrightTestConfig = {
 
     // video: 'retain-on-failure',
   },
-
-  // projects: [
-  //   {
-  //     name: 'Desktop Chrome',
-  //     use: {
-  //       ...devices['Desktop Chrome'],
-  //     },
-  //   },
+  //TODO: only Chrome mode
+  projects: [
+    {
+      name: 'Desktop Chrome',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
   //   {
   //     name: 'Desktop Firefox',
   //     use: {
@@ -72,6 +72,6 @@ const config: PlaywrightTestConfig = {
   //     name: 'Mobile Safari',
   //     use: devices['iPhone 12'],
   //   },
-  // ],
+  ]
 };
 export default config;

@@ -1,20 +1,21 @@
 {
   "name": "new-project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:e2e-examples": "playwright test --config e2e-examples/playwright.config.ts",
+    "test:e2e-examples": "playwright test --config e2e-examples/playwright-e2e.config.ts",
+    "test:smoke-examples": "playwright test --config e2e-examples/playwright-smoke.config.ts",
     "test:e2e": "playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.20.1"
+    "@playwright/test": "^1.33.0"
   },
   "dependencies": {
-    "@testomatio/reporter": "^0.4.6",
+    "@testomatio/reporter": "^0.7.6",
     "dotenv": "^10.0.0"
   }
 }

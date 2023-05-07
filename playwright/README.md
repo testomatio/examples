@@ -16,6 +16,24 @@ git clone git@github.com:testomatio/examples.git && cd examples/playwright
 npm i
 ```
 
+2.1) Run tests to check if they work (via npm):
+
+```
+npm run test:e2e
+```
+
+2.2) Run only smoke tests (via npm):
+
+```sh
+npm run test:smoke-examples
+```
+
+2.3) Run only e2e tests (via npm):
+
+```sh
+npm run test:e2e-examples
+```
+
 This will install Playwright with puppeteer & Testomat.io reporter
 
 ## Loading Tests to Testomat.io
@@ -25,17 +43,22 @@ This will install Playwright with puppeteer & Testomat.io reporter
 2. Run `npx check-tests` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
 
 ```
-TESTOMATIO={apiKey} npx check-tests playwright --typescript "**/*{.,_}spec.ts"
+TESTOMATIO={apiKey} npx check-tests@latest Playwright "**/*{.,_}{test,spec,cy}.ts" --typescript
 ```
 
 > **Environment variables** It is recommended to store Testomatio API Key as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests.
 
-## Publishing Test Results to Testomat.io
+## Publishing Test Results to Testomat.io (all available tests)
 
 Get API key from a project in Testomat.io and set it as environment variable `TESTOMATIO`:
 
 ```
-TESTOMATIO={apiKey} npx playwright tests
+TESTOMATIO={apiKey} npx playwright test
+```
+
+_or only smoke tests:_
+```
+TESTOMATIO={key} npx playwright test --config e2e-examples/playwright-smoke.config.ts
 ```
 
 ### Configuration
@@ -50,3 +73,7 @@ reporter: [
   }]
 ],
 ```
+
+### Pay attention
+
+_One test has a "FAIL" status... to fix it, see the instructions in the TODO section in file => e2e-examples/e2e-tests/1-getting-started.spec.ts_

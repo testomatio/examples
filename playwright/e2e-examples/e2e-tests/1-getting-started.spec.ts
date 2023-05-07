@@ -13,5 +13,6 @@ test('basic test', async ({ page }) => {
 
   await inputBox.fill('Learn Playwright');
   await inputBox.press('Enter');
-  await expect(todoList).toHaveText('Le1arn Playwright');
+  // example of test with status FAIL
+  await expect(todoList).toHaveText('Le1arn Playwright'); //TODO: To fix update text to => 'Learn Playwright'
 });
