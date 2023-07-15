@@ -38,7 +38,7 @@ jobs:
       run: echo "::set-output name=run_value::$(date +%s)"
     - run: npx codeceptjs run --grep "${{ github.event.inputs.grep }}"
       env:
-        TESTOMATIO: "${{ secrets.testomatio }}"
-        TESTOMATIO_URL: "${{ secrets.testomatio_url }}"
+        TESTOMATIO: "${{ secrets.TESTOMATIO }}"
+        TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
         TESTOMATIO_RUN: "${{ steps.generate-run.outputs.run_value }}"
         codecept_GROUP_TESTS: "${{ secrets.codecept_GROUP_TESTS }}"
