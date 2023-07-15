@@ -4,12 +4,17 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 
 setHeadlessWhen(process.env.HEADLESS);
 
+const tests = process.env.codecept_GROUP_TESTS === "quick"
+          ? './todomvc-tests/todo-mvc_test.js'
+          : './todomvc-tests/**/*_test.js'
+
 exports.config = {
-  tests: './todomvc-tests/**/*_test.js',
+  tests,
   output: './output',
   helpers: {
     Playwright: {
       video: true,
+      trace: false,
       url: 'http://localhost',
       waitForTimeout: 5000,
       waitForNavigation: 'networkidle0',
@@ -33,6 +38,9 @@ exports.config = {
       require: '@testomatio/reporter/lib/adapter/codecept',
       apiKey:  process.env.TESTOMATIO,
     },
+    screenshotOnFail: {
+      enabled: false
+    }
   },
   bootstrap: null,
   mocha: {},

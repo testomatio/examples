@@ -3,6 +3,8 @@ Feature('codepress demo')
 Before(async ({ I }) => {
   I.amOnPage('http://todomvc.com/examples/angularjs/#/')
 
+  console.log("Test Before hoooks quick test");
+
   I.say('Given I already have some todos')
   const todoItems = [
     {title: 'Create a cypress like runner for CodeceptJS', completed: false},

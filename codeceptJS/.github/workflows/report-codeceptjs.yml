@@ -1,0 +1,44 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CodeceptJS examples TESTOMATIO reporting
+
+on:
+  workflow_dispatch:
+    inputs:
+      grep:
+        description: 'A grep '
+        required: false
+        default: ''
+      testomatio:
+        required: false
+      testomatio_url:
+        required: false
+      run:
+        required: false
+      browsers:
+        required: false
+  schedule:
+    - cron: "0 8 * * *"
+
+jobs:
+  reporting:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 18.x
+    - run: npm i
+    - name: Generate unique run value
+      id: generate-run
+      run: echo "::set-output name=run_value::$(date +%s)"
+    - run: npx codeceptjs run --grep "${{ github.event.inputs.grep }}"
+      env:
+        TESTOMATIO: "${{ secrets.testomatio }}"
+        TESTOMATIO_URL: "${{ secrets.testomatio_url }}"
+        TESTOMATIO_RUN: "${{ steps.generate-run.outputs.run_value }}"
+        codecept_GROUP_TESTS: "${{ secrets.codecept_GROUP_TESTS }}"
