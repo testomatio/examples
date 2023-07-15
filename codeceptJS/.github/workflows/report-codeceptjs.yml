@@ -40,5 +40,4 @@ jobs:
       env:
         TESTOMATIO: "${{ secrets.TESTOMATIO }}"
         TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
-        TESTOMATIO_RUN: "${{ steps.generate-run.outputs.run_value }}"
         CODECEPT_GROUP_TESTS: "${{ secrets.CODECEPT_GROUP_TESTS }}"
