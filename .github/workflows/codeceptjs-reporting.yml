@@ -1,21 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 # - cron: "0 8 * * *"
-name: CodeceptJS examples TESTOMATIO reporting
+name: CodeceptJS example reporting results
 
 on:
-  workflow_dispatch:
-    inputs:
-      testomatio:
-        required: false
-      testomatio_url:
-        required: false
-      run:
-        required: false
-      browsers:
-        required: false
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 8 * * *"
 
 jobs:
   reporting:
@@ -24,27 +14,18 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        branch:
-         - examples-28-reporting-results
 
     steps:
-      - name: checkout branch for schedule event
-        if: (github.event_name == 'schedule') #for schedule event, checkout matrix branches seperately.
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ matrix.branch }}
-      - name: Setup node
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Switch to the codeceptJS example dir
-        run: cd codeceptJS/
       - name: Dependencies installing
-        run: npm i
-      - name: Generate unique run value
-        id: generate-run
-        run: echo "::set-output name=run_value::$(date +%s)"
-      - run: npx codeceptjs run
+        run: npm ci
+      - name: execute tests
+        continue-on-error: true
+        run: npx codeceptjs run
         env:
           TESTOMATIO: "${{ secrets.TESTOMATIO }}"
           TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
