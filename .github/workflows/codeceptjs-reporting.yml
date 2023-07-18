@@ -18,10 +18,11 @@ on:
         required: false
   schedule:
     - cron: "*/30 * * * *"
+    branches:
+      - examples-28-reporting-results
 
 jobs:
   reporting:
-
     runs-on: ubuntu-latest
 
     steps:
