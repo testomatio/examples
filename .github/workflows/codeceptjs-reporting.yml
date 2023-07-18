@@ -17,9 +17,7 @@ on:
       browsers:
         required: false
   schedule:
-    - cron: "*/30 * * * *"
-    branches:
-      - examples-28-reporting-results
+    - cron: "*/20 * * * *"
 
 jobs:
   reporting:
@@ -27,6 +25,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: examples-28-reporting-results
     - name: Setup node
       uses: actions/setup-node@v1
       with:
