@@ -38,7 +38,7 @@ jobs:
     - name: Generate unique run value
       id: generate-run
       run: echo "::set-output name=run_value::$(date +%s)"
-    - run: npx codeceptjs run"
+    - run: npx codeceptjs run
       env:
         TESTOMATIO: "${{ secrets.TESTOMATIO }}"
         TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
