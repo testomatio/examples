@@ -24,8 +24,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Dependencies installing
-        run: npm ci
-      - name: execute tests
+        run: npm i
+      - name: Test executing
         continue-on-error: true
         run: npx codeceptjs run
         env:
