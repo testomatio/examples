@@ -5,11 +5,15 @@ name: CodeceptJS example reporting results
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "*/15 * * * *"
 
 jobs:
   reporting:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./codeceptJS
 
     strategy:
       matrix:
@@ -17,17 +21,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Switch example branch
-        run: cd codeceptJS/
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Dependencies installing
+      - name: Setup dependancies
         run: npm i
-      - name: Test executing
-        continue-on-error: true
-        run: npx codeceptjs run
+      - name: Run tests
+        id: test-incorrect
+        run: bash run-tests-and-check-results.sh
         env:
           TESTOMATIO: "${{ secrets.TESTOMATIO }}"
           TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
