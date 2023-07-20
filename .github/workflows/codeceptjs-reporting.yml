@@ -5,7 +5,7 @@ name: CodeceptJS example reporting results
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/10 * * * *"
 
 jobs:
   reporting:
