@@ -5,7 +5,7 @@ name: CodeceptJS example reporting results
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "0 8 * * *"
 
 jobs:
   reporting:
@@ -21,6 +21,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          path: ${{ github.sha }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
