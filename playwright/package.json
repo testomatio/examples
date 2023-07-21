@@ -1,21 +1,21 @@
 {
-  "name": "new-project",
-  "version": "1.1.0",
-  "description": "",
+  "name": "playwright-new-project",
+  "version": "1.1.1",
+  "description": "Running and Monitoring Playwright tests with TESTOMATIO Reporter",
   "main": "index.js",
   "scripts": {
     "test:e2e-examples": "playwright test --config e2e-examples/playwright-e2e.config.ts",
     "test:smoke-examples": "playwright test --config e2e-examples/playwright-smoke.config.ts",
     "test:e2e": "playwright test"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["e2e", "testomatio", "playwright"],
+  "author": "davert, mihaylukvv",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.33.0"
+    "@playwright/test": "^1.36.1"
   },
   "dependencies": {
-    "@testomatio/reporter": "^0.7.6",
-    "dotenv": "^10.0.0"
+    "@testomatio/reporter": "1.0.1",
+    "dotenv": "^16.3.1"
   }
 }

@@ -44,7 +44,7 @@ test('element selectors', async ({ page }) => {
   await page.click('.todoapp .footer >> text=Completed');
 
   // Selecting based on layout, with css selector
-  expect(await page.innerText('a:right-of(:text("Active"))')).toBe('Completed');
+  expect(await page.innerText('a:right-of(:text("Active"))')).toBe('Completed1'); //TODO: to fix this test use ".toBe('Completed')"
 
   // Only visible elements, with css selector
   await page.click('text=Completed >> visible=true');
