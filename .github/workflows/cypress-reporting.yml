@@ -5,7 +5,7 @@ name: Cypress example reporting results
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "10 5 */2 * *"
 
 jobs:
   reporting:
