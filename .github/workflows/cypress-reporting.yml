@@ -1,0 +1,34 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# - cron: "0 8 * * *"
+name: Cypress example reporting results
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+
+jobs:
+  reporting:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./cypress
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup dependancies
+        run: npm i
+      - name: Run tests
+        run: bash run-tests-and-check-results.sh
+        env:
+          TESTOMATIO: "${{ secrets.TESTOMATIO_CYPRESS }}"
+          TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
