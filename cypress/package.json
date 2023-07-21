@@ -10,7 +10,7 @@
   "author": "davert, mihaylukvv",
   "license": "ISC",
   "devDependencies": {
-    "@testomatio/reporter": "1.0.1",
+    "@testomatio/reporter": "latest",
     "cypress": "^12.17.1"
   }
 }

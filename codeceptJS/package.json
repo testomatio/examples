@@ -9,7 +9,7 @@
   "author": "kaflan, davert, mihaylukvv",
   "license": "ISC",
   "dependencies": {
-    "@testomatio/reporter": "1.0.1",
+    "@testomatio/reporter": "latest",
     "axios": "^1.4.0",
     "check-tests": "^0.8.16",
     "dotenv": "^16.3.1",
