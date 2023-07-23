@@ -5,7 +5,7 @@ name: Playwright example reporting results
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "20 5 */2 * *"
 
 jobs:
   reporting:
