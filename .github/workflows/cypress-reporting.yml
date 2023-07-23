@@ -1,11 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 # - cron: "0 8 * * *"
-name: CodeceptJS example reporting results
+name: Cypress example reporting results
 
 on:
   schedule:
-    - cron: "0 5 */2 * *"
+    - cron: "10 5 */2 * *"
 
 jobs:
   reporting:
@@ -13,7 +13,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./codeceptJS
+        working-directory: ./cypress
 
     strategy:
       matrix:
@@ -28,9 +28,7 @@ jobs:
       - name: Setup dependancies
         run: npm i
       - name: Run tests
-        id: test-incorrect
         run: bash run-tests-and-check-results.sh
         env:
-          TESTOMATIO: "${{ secrets.TESTOMATIO }}"
+          TESTOMATIO: "${{ secrets.TESTOMATIO_CYPRESS }}"
           TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
-          CODECEPT_GROUP_TESTS: "${{ secrets.CODECEPT_GROUP_TESTS }}"

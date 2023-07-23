@@ -1,15 +1,16 @@
 {
-  "name": "cypress-example",
-  "version": "1.0.0",
-  "description": "",
+  "name": "cypress-example-project",
+  "version": "1.0.1",
+  "description": "Running and Monitoring Cypress tests with TESTOMATIO Reporter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": ["e2e", "testomatio", "cypress"],
+  "author": "davert, mihaylukvv",
   "license": "ISC",
   "devDependencies": {
-    "@testomatio/reporter": "^0.6.0",
-    "cypress": "^10"
+    "@testomatio/reporter": "latest",
+    "cypress": "^12.17.1"
   }
 }

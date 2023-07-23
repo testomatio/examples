@@ -24,7 +24,7 @@ npm i
 2. Run `npx check-tests` to upload tests data into testomat.io. Pass `{API_KEY}` as `TESTOMATIO` environment variable:
 
 ```bash
-TESTOMATIO={API_KEY} npx check-tests cypress "**/**.spec.js" -d cypress/integration/*
+TESTOMATIO={API_KEY} npx check-tests cypress "**/**.spec.js" -d cypress/**
 ```
 > **Environment variables** It is recommended to store Testomatio `{API_KEY}` as environment variable and never save it in the source code. Set them directly when running tests or use [dotenv](https://www.npmjs.com/package/dotenv) package to save environment variable in a file and load them for tests. 
 
