@@ -4,7 +4,7 @@
   "description": "This repository contains sample test file integrated with testomat.io",
   "license": "MIT",
   "dependencies": {
-    "lodash": "4.17.19",
+    "lodash": "4.17.21",
     "nanoid": "^2.1.9",
     "testcafe": "^1.5.0",
     "testcafe-reporter-testomatio": "latest"
