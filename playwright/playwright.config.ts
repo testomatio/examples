@@ -39,7 +39,7 @@ const config: PlaywrightTestConfig = {
 
     screenshot: 'on',
 
-    // video: 'retain-on-failure',
+    video: 'retain-on-failure',
   },
   //TODO: only Chrome mode
   projects: [
