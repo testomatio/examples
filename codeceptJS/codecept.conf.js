@@ -14,7 +14,7 @@ exports.config = {
   helpers: {
     Playwright: {
       video: true,
-      trace: false,
+      trace: true,
       url: 'http://localhost',
       waitForTimeout: 5000,
       waitForNavigation: 'networkidle0',
