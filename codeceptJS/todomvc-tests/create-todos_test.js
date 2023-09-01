@@ -1,3 +1,5 @@
+const {testomatioLogger} = require('@testomatio/reporter');
+
 Feature('@first Create Tasks @step:06 @smoke @story:12345')
 
 Before(async ({ I, TodosPage }) => {
@@ -8,6 +10,8 @@ Before(async ({ I, TodosPage }) => {
  * Happy Path tests
  */
 Scenario('Create a new todo item', async ({ I, TodosPage }) => {
+  console.log('console log message');
+  testomatioLogger.info('testomatio info log message');
   I.say('Given I have an empty todo list')
 
   I.say('When I create a todo "foo"')
