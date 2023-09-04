@@ -1,3 +1,4 @@
+import { testomatioLogger } from '@testomatio/reporter';
 import { expect } from 'chai';
 
 describe("Array", function() {
@@ -65,6 +66,14 @@ describe("Array", function() {
   // Test Case 10
   it("should return a sorted array in ascending order", function() {
     expect([3, 2, 1].sort()).to.deep.equal([1, 2, 3]);
+  });
+
+
+  // Test Case 11
+  it("should attach logs", function () {
+    console.warn('console warn message');
+    testomatioLogger.debug('testomatio logger debug message');
+    expect(arr.indexOf(4)).to.equal(-1);
   });
 });
 
