@@ -27,6 +27,6 @@
   "devDependencies": {
     "@codeceptjs/configure": "^0.10.0",
     "@codeceptjs/ui": "^0.5.0",
-    "codeceptjs": "^3.5.2"
+    "codeceptjs": "latest"
   }
 }
