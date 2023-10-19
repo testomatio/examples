@@ -6,8 +6,8 @@
   "author": "Koushik Mohan <koushikmohan1996@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@testomatio/reporter": "^0.6.5",
-    "check-tests": "^0.7.3",
+    "@testomatio/reporter": "latest",
+    "check-tests": "latest",
     "jest-junit": "^13.2.0"
   },
   "devDependencies": {

@@ -3,7 +3,8 @@
   "version": "1.1.3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx codeceptjs run",
+    "test:artifact": "npx codeceptjs run artifact-tests/**"
   },
   "keywords": [],
   "author": "kaflan, davert, mihaylukvv",
