@@ -1,0 +1,13 @@
+name: test
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo $GITHUB_REF
+      - run: echo $GITHUB_REPOSITORY
+      - run: echo ${{ github.workflow }}
+      - run: cd jest && npm i
+      - run: cd jest && DEBUG=@testomatio/reporter:pipe:github TESTOMATIO=yapff28430mu GH_PAT=${{ github.token }} TESTOMATIO_URL=https://beta.testomat.io npm run test animal-sort/
