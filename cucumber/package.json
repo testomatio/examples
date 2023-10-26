@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cucumber/cucumber": "^10.0.1",
     "@testomatio/reporter": "latest",
     "cucumber": "^6.0.5"
   },
-  "devDependencies": {},
   "description": ""
 }
