@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cucumber/cucumber": "^10.0.1"
+    "@cucumber/cucumber": "^10.0.1",
+    "@testomatio/reporter": "file:../../reporter/testomatio-reporter-1.0.12.tgz"
   }
 }

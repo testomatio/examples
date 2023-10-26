@@ -1,5 +1,10 @@
+import { testomat } from '@testomatio/reporter';
+
 export class Greeter {
   sayHello() {
-      return "hello";
+    testomat.artifact({
+      path: 'artifacts/artifact-test-image.png',
+    });
+    return 'hello';
   }
 }
