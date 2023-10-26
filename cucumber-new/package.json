@@ -1,0 +1,15 @@
+{
+  "name": "cucumber-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^10.0.1"
+  }
+}
