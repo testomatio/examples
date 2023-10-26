@@ -11,7 +11,3 @@ Scenario('Upload image @T806d42e4', async () => {
     path: 'artifacts/artifact-test-image.png',
   });
 });
-
-Scenario('Do nothing @T83595926', async () => {
-  console.log('do nothing');
-});
