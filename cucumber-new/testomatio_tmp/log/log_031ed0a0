@@ -1,0 +1,16 @@
+[30m[1mIntercept console message[22m: [31m[1mFAILED[22m[39m[30m [90mTypeError: testomat.step is not a function[39m[30m[39m
+[30m[1m[22m[39m
+[30m[1mSUMMARY:[22m[39m
+[30m[1m[22m[39m
+[30m[1m[22m[39m
+[30m  1) Intercept console message[39m
+[30m     [31m[1mWhen [22mI add the step[39m[30m [90m(0.21ms)[39m[30m[39m
+[30m     [33m[1mThen [22mstep should be added to report[39m[30m [90m(0.00ms)[39m[30m[39m
+[30m[39m
+[30m[31mTypeError: testomat.step is not a function[39m[30m[39m
+[30m[31m    at Testomat.step (file:///Users/oleksandrpelykh/projects/testomat.io/examples/cucumber-new/src/index.js:20:14)[39m[30m[39m
+[30m[31m    at World.<anonymous> (file:///Users/oleksandrpelykh/projects/testomat.io/examples/cucumber-new/features/step_definitions/steps.js:24:18)[39m[30m[39m
+[30m[41m [1m FALIURE [22m | Total Scenarios: [1m4[22m [49m[39m
+[30m[90m[TESTOMATIO][39m[30m 📊 Report created. Report ID: 06e0c517[39m
+[30m[90m[TESTOMATIO][39m[30m 📊 Report Saved. Report URL: [35mhttps://beta.testomat.io/projects/cucumber-artifact/runs/06e0c517/report[39m[30m[39m
+[30m[90m[TESTOMATIO][39m[30m 🗄️ 3 artifacts [1mpublicly[22m uploaded to S3 bucket[39m
