@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { testomatioLogger } from '@testomatio/reporter';
 
 /**
  * Inside every test you get a new isolated page instance.
@@ -7,8 +6,6 @@ import { testomatioLogger } from '@testomatio/reporter';
  * @see https://playwright.dev/docs/api/class-page
  */
 test('basic test', async ({ page }) => {
-  console.log('console log message');
-  testomatioLogger.warn('testomatio logger warn message');
   await page.goto('https://todomvc.com/examples/vanilla-es6/');
 
   const inputBox = page.locator('input.new-todo');
