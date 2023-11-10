@@ -1,7 +1,9 @@
 import assert from 'assert';
 import { When, Then } from '@cucumber/cucumber';
-import { Greeter, Testomat } from '../../src/index.js';
-import { Logger } from '../../src/index.js';
+import { Greeter } from '../../src/index.js';
+import { logger, testomat, log } from '@testomatio/reporter';
+
+logger;
 
 When('the greeter says hello', function () {
   this.whatIHeard = new Greeter().sayHello();
@@ -12,8 +14,8 @@ Then('I should have heard {string}', function (expectedResponse) {
 });
 
 When('The logger intercepts console message', function () {
-  new Logger().intercept(console);
   console.error('This is error message');
+  log`This is log message`;
 });
 
 Then('log message should be added to report', function () {
@@ -21,8 +23,7 @@ Then('log message should be added to report', function () {
 });
 
 When('I add the step', function () {
-  new Testomat().step();
-  console.error('This is error message');
+  testomat.step('This is step');
 });
 
 Then('step should be added to report', function () {
@@ -30,11 +31,9 @@ Then('step should be added to report', function () {
 });
 
 When('I add the artifact', function () {
-  new Testomat().step();
-  console.error('This is error message');
+  testomat.artifact('artifacts/artifact-test-image.png');
 });
 
 Then('artifact should be attached to report', function () {
   assert.equal(true, true);
 });
-
