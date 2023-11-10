@@ -2,7 +2,7 @@ const { logger, log } = require('@testomatio/reporter');
 
 // console messages are added to report by default when import "logger" from reporter
 // but to prevent unsused variable warning, you can call next code:
-logger.intercept(console);
+logger;
 
 Feature('Logger @Sebd746ef');
 
