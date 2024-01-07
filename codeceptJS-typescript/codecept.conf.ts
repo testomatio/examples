@@ -19,5 +19,12 @@ export const config: CodeceptJS.MainConfig = {
   include: {
     I: './steps_file'
   },
-  name: 'codeceptJS-typescript'
+  name: 'codeceptJS-typescript',
+
+  plugins: {
+    testomatio: {
+      enabled: true,
+      require: '@testomatio/reporter/lib/adapter/codecept',
+    }
+  }
 }
