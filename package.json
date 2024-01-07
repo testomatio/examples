@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/kaflan/examples#readme",
   "dependencies": {
-    "@testomatio/reporter": "^1.0.17",
     "concurrently": "^6.2.0"
   }
 }
