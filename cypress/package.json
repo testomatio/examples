@@ -4,9 +4,13 @@
   "description": "Running and Monitoring Cypress tests with TESTOMATIO Reporter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run"
   },
-  "keywords": ["e2e", "testomatio", "cypress"],
+  "keywords": [
+    "e2e",
+    "testomatio",
+    "cypress"
+  ],
   "author": "davert, mihaylukvv",
   "license": "ISC",
   "devDependencies": {
