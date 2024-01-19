@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { testomat } from '@testomatio/reporter';
+import testomat from '@testomatio/reporter';
 
 test.describe('Testomat functions', () => {
   test('artifact @T64346bdd', async () => {

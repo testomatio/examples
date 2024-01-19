@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { testomat } from '@testomatio/reporter';
+import testomat from '@testomatio/reporter';
 
 test.describe('upload artifact 2', () => {
   test(`upload image`, async () => {

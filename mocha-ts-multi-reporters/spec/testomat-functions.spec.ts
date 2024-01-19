@@ -1,4 +1,4 @@
-import { testomat, log,  } from '@testomatio/reporter';
+import testomat, { log } from '@testomatio/reporter';
 
 describe('Testomat functions @S43849225', () => {
   it('attach image @T93dc3526', () => {

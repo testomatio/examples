@@ -1,7 +1,7 @@
 import assert from 'assert';
 import { When, Then } from '@cucumber/cucumber';
 import { Greeter } from '../../src/index.js';
-import { logger, testomat, log } from '@testomatio/reporter';
+import testomat, { logger, log } from '@testomatio/reporter';
 
 logger;
 

@@ -1,4 +1,4 @@
-import { testomat } from '@testomatio/reporter';
+import testomat from '@testomatio/reporter';
 
 describe('suite name', () => {
   it('artifact is uploaded', async function () {
