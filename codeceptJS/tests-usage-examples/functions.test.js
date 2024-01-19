@@ -1,4 +1,4 @@
-const { testomat } = require('@testomatio/reporter');
+const testomat = require('@testomatio/reporter');
 
 Feature('Testomat functions');
 
