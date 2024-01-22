@@ -1,7 +1,7 @@
 Feature('codepress demo')
 
 Before(async ({ I }) => {
-  I.amOnPage('http://todomvc.com/examples/angularjs/#/')
+  I.amOnPage('https://todomvc.com/examples/angular/dist/browser/#/all')
 
   console.log("Test Before hoooks quick test");
 
