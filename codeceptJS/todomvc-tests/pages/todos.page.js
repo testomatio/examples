@@ -8,13 +8,13 @@ const I = actor();
 // const nthTodoItem = nth => `.todo-list li:nth-child(${nth})` // ({ xpath: `(//*[contains(@class,"todo-list")]/li)[${nth}]`})
 
 const nthTodoCheckbox = nth => locate('div > input').inside(`.todo-list li:nth-child(${nth})`) 
-const nthTTodoDeleteButton = nth => locate('div > button').inside(`.todo-list li:nth-child(${nth})`).as(`${nth}nth delete button`) 
-const nthTodoEditField = nth => locate('form > input').inside(`.todo-list li:nth-child(${nth})`).as(`${nth}nth todo input`) 
+const nthTTodoDeleteButton = nth => locate('div > button.destroy').inside(`.todo-list li:nth-child(${nth})`).as(`${nth}nth delete button`) 
+const nthTodoEditField = nth => locate('input#edit-todo-input').inside(`.todo-list li:nth-child(${nth})`).as(`${nth}nth todo input`) 
 const nthTodoItem = nth => locate('.todo-list li').at(nth).as(`${nth} todo item`)
 
 module.exports = {
     goto() {
-        I.amOnPage('http://todomvc.com/examples/angularjs/#/')
+        I.amOnPage('https://todomvc.com/examples/angular/dist/browser/#/all')
         I.refreshPage()
         I.executeScript(() => sessionStorage.clear())
         I.executeScript(() => console.error('Boom!'))
@@ -33,7 +33,9 @@ module.exports = {
     },
 
     async markNthAsCompleted(nthTodo) {
-        const classNames = await I.grabAttributeFrom(nthTodoItem(nthTodo), 'class')
+        let classNames = await I.grabAttributeFrom(nthTodoItem(nthTodo), 'class')
+        if (!classNames) classNames = [];
+
         assert(classNames.indexOf('completed') < 0, 'Expected todo to be not already marked as completed')
         I.click(nthTodoCheckbox(nthTodo))
     },
