@@ -44,10 +44,16 @@ const config: PlaywrightTestConfig = {
   //TODO: only Chrome mode
   projects: [
     {
-      name: 'Desktop Chrome',
+      name: 'desktop',
       use: {
         ...devices['Desktop Chrome'],
       },
+      dependencies: ['setup example'],
+      testMatch: 'e2e-tests/*.spec.ts',
+    },
+    {
+      name: 'setup example',
+      testMatch: 'setup.ts',
     },
   //   {
   //     name: 'Desktop Firefox',
