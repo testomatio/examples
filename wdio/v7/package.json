@@ -1,0 +1,25 @@
+{
+  "name": "testomat-example-wdio-v7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx start-test-run -c 'wdio run ./test/wdio.conf.ts' --env-file .env"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^7.34.0",
+    "@wdio/local-runner": "^7.34.0",
+    "@wdio/mocha-framework": "^7.33.0",
+    "@wdio/spec-reporter": "^7.33.0",
+    "chromedriver": "^121.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "wdio-chromedriver-service": "^8.1.1"
+  },
+  "dependencies": {
+    "@testomatio/reporter": "file:../../../reporter/testomatio-reporter-1.1.1.tgz",
+    "webdriverio": "^7.34.0"
+  }
+}
