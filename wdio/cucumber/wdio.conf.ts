@@ -1,5 +1,5 @@
 import type { Options } from '@wdio/types'
-const testomatio = require('@testomatio/reporter/lib/adapter/webdriver');
+const testomatio = require('@testomatio/reporter/lib/adapter/wdio-cucumber');
 
 export const config: Options.Testrunner = {
   //
