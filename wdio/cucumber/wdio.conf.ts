@@ -1,5 +1,6 @@
 import type { Options } from '@wdio/types'
-const testomatio = require('@testomatio/reporter/lib/adapter/wdio-cucumber');
+// const testomatio = require('@testomatio/reporter/lib/adapter/wdio-cucumber');
+const testomatio = require('@testomatio/reporter/lib/adapter/webdriver');
 
 export const config: Options.Testrunner = {
   //
@@ -32,7 +33,7 @@ export const config: Options.Testrunner = {
   // of the config file unless it's absolute.
   //
   specs: [
-    './src/features/**/*.feature',
+    './features/**/*.feature',
   ],
   // Patterns to exclude.
   exclude: [
@@ -54,14 +55,17 @@ export const config: Options.Testrunner = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 5,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
   capabilities: [{
-    browserName: 'chrome'
+    browserName: 'chrome',
+    'goog:chromeOptions': {
+      args: ['headless', 'disable-gpu']
+    }
   }],
 
   //

@@ -1,8 +1,5 @@
 import { When } from '@cucumber/cucumber';
-
-function addTwoNumbers(a: number, b: number) {
-  return a + b;
-}
+import { addTwoNumbers } from './script';
 
 When(
   /I add two numbers (\d+) and (\d+)/,

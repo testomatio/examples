@@ -8,7 +8,8 @@
     "test": "wdio run wdio.conf.ts"
   },
   "devDependencies": {
-    "@testomatio/reporter": "^1.2.1",
+    "@testomatio/reporter": "file:../../../reporter/testomatio-reporter-1.3.0.tgz",
+    "@types/chai": "^4.3.14",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
     "@wdio/cli": "^8.32.2",
@@ -26,5 +27,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "webdriverio": "^8.32.2"
+  },
+  "dependencies": {
+    "chai": "^5.1.0"
   }
 }
