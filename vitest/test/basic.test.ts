@@ -1,28 +1,19 @@
-import { assert, expect, test } from 'vitest'
-import { squared } from '../src/basic.js'
+import { describe, expect, it, test } from 'vitest';
 
-// Edit an assertion and save to see HMR in action
+describe('suite name', () => {
+  describe('nested suite', () => {
+    it('test inside nested suite', () => {
+      expect(1 + 1).eq(2);
+    });
+  });
 
-test('Math.sqrt()', () => {
-  console.log('TEST: started');
-  expect(Math.sqrt(4)).toBe(2)
-  expect(Math.sqrt(144)).toBe(12)
-  expect(Math.sqrt(2)).toBe(Math.SQRT2)
-})
+  test('failing test', () => {
+    expect(1 + 1).eq(3)
+  })
+});
 
-// test('Squared', () => {
-//   expect(squared(2)).toBe(4)
-//   expect(squared(12)).toBe(144)
-// })
+test('Test in file @42033b7c', ({ task }) => {
+});
 
-// test('JSON', () => {
-//   const input = {
-//     foo: 'hello',
-//     bar: 'world',
-//   }
-
-//   const output = JSON.stringify(input)
-
-//   expect(output).eq('{"foo":"hello","bar":"world"}')
-//   assert.deepEqual(JSON.parse(output), input, 'matches original')
-// })
+test('Test with console.log', ({ task }) => {
+});
