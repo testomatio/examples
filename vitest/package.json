@@ -1,0 +1,23 @@
+{
+  "name": "@vitest/example-test",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.8",
+    "@vitest/ui": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "stackblitz": {
+    "startCommand": "npm run test:ui"
+  },
+  "dependencies": {
+    "@testomatio/reporter": "file:../reporter/testomatio-reporter-1.4.4.tgz"
+  }
+}
