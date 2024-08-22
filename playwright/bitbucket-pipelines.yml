@@ -1,0 +1,18 @@
+image: atools/chrome-headless:java17-nodelts-latest
+
+definitions:
+  variables:
+    TESTOMATIO: $TESTOMATIO
+    TESTOMATIO_URL: $TESTOMATIO_URL
+    TESTOMATIO_ENV: $TESTOMATIO_ENV
+
+pipelines:
+  default:
+    - step:
+        name: Run Playwright tests
+        script:
+          - npm install
+          - npx playwright install --with-deps chromium
+          - npx playwright test
+
+

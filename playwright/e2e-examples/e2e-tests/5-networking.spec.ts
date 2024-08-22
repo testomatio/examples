@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/test';
  * specific HTTP response. This response contains a JSON body where we assert
  * some properties.
  */
-test('should be able to read a response body', async ({ page }) => {
+test('should be able to read a response body @T9b7c2223', async ({ page }) => {
   await page.goto('/network.html');
   const [response] = await Promise.all([
     page.waitForResponse('/api/v1/users.json'),
@@ -33,7 +33,7 @@ test.describe('mocked responses', () => {
     }));
   });
 
-  test('be able to mock responses', async ({ page }) => {
+  test('be able to mock responses @Tdb534a7f', async ({ page }) => {
     await page.goto('/network.html');
     await page.click('text=Load user');
     await expect(page.locator('p')).toHaveText('User: James Bond');

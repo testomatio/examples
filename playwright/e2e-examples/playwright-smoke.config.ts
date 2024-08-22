@@ -1,4 +1,5 @@
 import { PlaywrightTestConfig } from '@playwright/test';
+import 'dotenv/config'
 
 // Reference: https://playwright.dev/docs/test-configuration
 const config: PlaywrightTestConfig = {

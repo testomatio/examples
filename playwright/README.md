@@ -76,4 +76,7 @@ reporter: [
 
 ### Pay attention
 
-_One test has a "FAIL" status... to fix it, see the instructions in the TODO section in file => e2e-examples/e2e-tests/1-getting-started.spec.ts_
+> [!WARNING]
+> Two tests has a "FAIL" status... to fix it, see the instructions in the TODO section in files 
+> * => e2e-examples/e2e-tests/1-getting-started.spec.ts
+> * => e2e-examples/e2e-tests/2-actions.spec.ts
