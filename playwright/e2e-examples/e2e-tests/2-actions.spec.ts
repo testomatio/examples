@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://todomvc.com/examples/vanilla-es6/');
+  await page.goto('https://todomvc.com/examples/javascript-es6/dist/');
 });
 
 /**
@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
  * by the completed items to ensure that the item is not visible anymore.
  * @see https://playwright.dev/docs/api/class-locator
  */
-test('basic interaction', async ({ page }) => {
+test('basic interaction @T8649e125', async ({ page }) => {
   const inputBox = page.locator('input.new-todo');
   const todoList = page.locator('.todo-list');
 
@@ -27,7 +27,7 @@ test('basic interaction', async ({ page }) => {
  * Playwright supports different selector engines which you can combine with '>>'.
  * @see https://playwright.dev/docs/selectors
  */
-test('element selectors', async ({ page }) => {
+test('element selectors @Tafb1b557', async ({ page }) => {
   // When no selector engine is specified, Playwright will use the css selector engine.
   await page.type('.header input', 'Learn Playwright');
   // So the selector above is the same as the following:
@@ -37,7 +37,7 @@ test('element selectors', async ({ page }) => {
   await page.click('text=All');
 
   // css allows you to select by attribute:
-  await page.click('[id="toggle-all"]');
+  await page.click('[class="toggle-all"]');
 
   // Combine css and text selectors (https://playwright.dev/docs/selectors/#text-selector)
   await page.click('.todo-list > li:has-text("Playwright")');
@@ -50,5 +50,5 @@ test('element selectors', async ({ page }) => {
   await page.click('text=Completed >> visible=true');
 
   // XPath selector
-  await page.click('xpath=//html/body/section/section/label');
+  await page.click('xpath=//html/body/section/footer/ul/li[1]/a');
 });

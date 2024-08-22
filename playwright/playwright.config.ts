@@ -1,6 +1,5 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
-
-require('dotenv').config();
+import 'dotenv/config'
 
 // Reference: https://playwright.dev/docs/test-configuration
 const config: PlaywrightTestConfig = {
@@ -9,7 +8,7 @@ const config: PlaywrightTestConfig = {
   // Test directory
   testDir: __dirname,
   // If a test fails on CI, retry it additional 2 times
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 0 : 0,
   // Artifacts folder where screenshots, videos, and traces are stored.
   outputDir: 'test-results/',
 

@@ -5,8 +5,8 @@ import { test, expect } from '@playwright/test';
  * @see https://playwright.dev/docs/intro
  * @see https://playwright.dev/docs/api/class-page
  */
-test('basic test', async ({ page }) => {
-  await page.goto('https://todomvc.com/examples/vanilla-es6/');
+test('basic test @T6d3fc36a', async ({ page }) => {
+  await page.goto('https://todomvc.com/examples/javascript-es6/dist/');
 
   const inputBox = page.locator('input.new-todo');
   const todoList = page.locator('.todo-list');

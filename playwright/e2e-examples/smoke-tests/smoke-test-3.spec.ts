@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe(
-    'simple url cheks',
+    'simple url cheks @Sd329f1b9',
     () => {
         // Suite
         test.describe('Check home page url', () => {
@@ -15,7 +15,7 @@ test.describe(
         });
 
         test.describe.skip('Check home page url (skip)', () => {
-            test('get started link (skip)', async ({ page }) => {
+            test('get started link (skip) @T09fb0556', async ({ page }) => {
                 // Access to the basic page  
                 await page.goto('https://playwright.dev/');
 
@@ -25,7 +25,7 @@ test.describe(
         });
 
         test.describe.fixme('Check home page url (fixme)', () => {
-            test('get started link (fixme)', async ({ page }) => {
+            test('get started link (fixme) @T8abf0e35', async ({ page }) => {
                 // Access to the basic page  
                 await page.goto('https://playwright.dev/');
 
