@@ -1,31 +1,11 @@
 import animalSort from './animalSort';
-
 import reporter from '@testomatio/reporter';
+import {log} from '@testomatio/reporter';
 
 describe('animalSort', () => {
-  // it('should return empty array if empty animal array is passed in', () => {
-
-  //   if (Math.random() > 0.5) throw new Error('Fail');
-
-  //   expect(animalSort([])).toEqual([]);
-  // });
-
-  // it('should return a sorted array of animal objects by their number of legs', () => {
-  //   const arr = [
-  //     { name: 'Dog', numberOfLegs: 4 },
-  //     { name: 'Bird', numberOfLegs: 2 },
-  //     { name: 'Snake', numberOfLegs: 0 },
-  //   ];
-  //   const result = [
-  //     { name: 'Snake', numberOfLegs: 0 },
-  //     { name: 'Bird', numberOfLegs: 2 },
-  //     { name: 'Dog', numberOfLegs: 4 },
-  //   ];
-  //   expect(animalSort(arr)).toEqual(result);
-  // });
-
   it('should also return sorted names of animals with same number of legs', () => {
     reporter.log('This is a log message');
+    log('This is a warning message');
     const arr = [
       { name: 'Cat', numberOfLegs: 4 },
       { name: 'Snake', numberOfLegs: 0 },
