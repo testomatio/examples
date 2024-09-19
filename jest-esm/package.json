@@ -7,7 +7,7 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@testomatio/reporter": "file:../../reporter/testomatio-reporter-1.4.10.tgz",
+    "@testomatio/reporter": "latest",
     "check-tests": "latest",
     "jest": "^29.7.0",
     "jest-junit": "^13.2.0"

@@ -45,8 +45,16 @@ Testomatio reporter is a plugin and should be enabled in `jest.conf.js`:
 Do not hard code apiKey and always use it as environment variable.
 
 ```js
-module.exports = {
-  testEnvironment: "node",
-  reporters: ['default', ['@testomatio/reporter/lib/adapter/jest.js', { apiKey: process.env.TESTOMATIO }]],
+import dotenv from 'dotenv'
+dotenv.config()
+
+export default {
+  // ./ is required before the path;
+  reporters: [
+    'default',
+    ['./node_modules/@testomatio/reporter/lib/adapter/jest.js', { apiKey: process.env.TESTOMATIO }],
+  ],
+  transform: {},
 };
+
 ```
