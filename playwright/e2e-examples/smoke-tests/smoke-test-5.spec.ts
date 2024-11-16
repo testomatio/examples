@@ -7,7 +7,7 @@ const TODO_ITEMS = [
 ];
 const URL = 'https://demo.playwright.dev/todomvc';
 
-test.describe('New Todo @Sa5fcb01b', () => {
+test.describe('New Todo', () => {
     let newTodo: any;
 
     test.beforeEach(async ({ page }) => {
@@ -29,7 +29,7 @@ test.describe('New Todo @Sa5fcb01b', () => {
             ]);
         });
     });
-    test('should allow me to add todo items @T1b82727a', async ({ page }) => {
+    test('should allow me to add todo items', async ({ page }) => {
         await test.step(`[Check 1.1] create a new todo locator`, async () => {
             // create a new todo locator
             const newTodo = page.getByPlaceholder('What needs to be done?');
@@ -44,7 +44,7 @@ test.describe('New Todo @Sa5fcb01b', () => {
             ]);
         });
     });
-    test('should allow me to add todo items (part 1) @Te8d6488c', async ({ page }) => {
+    test('should allow me to add todo items (part 1)', async ({ page }) => {
         await test.step(`[Check 1.2] create a new todo locator`, async () => {
             // create a new todo locator
             newTodo = page.getByPlaceholder('What needs to be done?');

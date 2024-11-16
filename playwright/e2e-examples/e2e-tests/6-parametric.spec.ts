@@ -13,7 +13,7 @@ test.beforeAll(async ({ browser }) => {
 });
 
 users.forEach(user => {
-  test(`Create a new user: ${user.firstName} ${user.lastName} @Tdc27a2a4`, async () => {
+  test(`Create a new user: ${user.firstName} ${user.lastName}`, async () => {
     await test.step('Log in', async () => {
       await test.step('Add new Record', async () => {
         await page.click('button[id="addNewRecordButton"]');
@@ -40,7 +40,7 @@ users.forEach(user => {
     });
   });
 
-  test(`Check if user exists: ${user.firstName} ${user.lastName} @T201e04a3`, async () => {
+  test(`Check if user exists: ${user.firstName} ${user.lastName}`, async () => {
     await expect(page.getByRole('gridcell', { name: `${user.firstName}`, exact: true })).toBeVisible();
     await expect(page.getByRole('gridcell', { name: `${user.lastName}`, exact: true })).toBeVisible();
     await expect(page.getByRole('gridcell', { name: `${user.email}`, exact: true })).toBeVisible();
@@ -49,7 +49,7 @@ users.forEach(user => {
     await expect(page.getByRole('gridcell', { name: `${user.department}`, exact: true })).toBeVisible();
   });
 
-  test(`Update user ${user.firstName} information @Tb8a36c4e`, async () => {
+  test(`Update user ${user.firstName} information`, async () => {
     await page.click(`div[role="gridcell"]:has-text("${user.department}") + div>div>span[title="Edit"]`);
     await page.fill('input[id="age"]', '35');
     await page.click('button[id="submit"]');
@@ -57,7 +57,7 @@ users.forEach(user => {
     await expect(await page.getByRole('gridcell', { name: '35', exact: true })).toBeVisible();
   });
 
-  test(`Delete a user ${user.firstName} @T27b2ea22`, async () => {
+  test(`Delete a user ${user.firstName}`, async () => {
     await page.click(`div[role="gridcell"]:has-text("${user.department}") + div>div>span[title="Delete"]`);
     await page.waitForLoadState('load');
     await expect(await page.getByRole('gridcell', { name: `${user.firstName}`, exact: true })).not.toBeVisible();

@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
  * All available test assertions are listed here:
  * @see https://playwright.dev/docs/test-assertions/
  */
-test('should be able to use assertions @Tb4e52a18', async ({ page }) => {
+test('should be able to use assertions', async ({ page }) => {
   await test.step('toHaveTitle/toHaveURL', async () => {
     await expect(page).toHaveTitle('TodoMVC: JavaScript Es6 Webpack');
     await expect(page).toHaveURL('https://todomvc.com/examples/javascript-es6/dist/');

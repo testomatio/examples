@@ -3,7 +3,7 @@ import Basic from "../src/Basic";
 
 const basic = new Basic();
 
-test.describe('Basic @Se935d35e', () => {
+test.describe('Basic', () => {
     const basicPage = basic.basicPageUrl();
 
     test.beforeEach(async ({ page }) => {
@@ -11,7 +11,7 @@ test.describe('Basic @Se935d35e', () => {
     });
     test.describe('Main Basic tests', () => {
         test.describe('[Case 1] Basic page checks 1', () => {
-            test('get started link @T81071d82', async ({ page }) => {  
+            test('get started link', async ({ page }) => {  
                 await test.step(`[Check 1.1] Basic page - click the <Get started> link`, async () => {
                     await page.getByRole('link', { name: 'Get started' }).click();
                 });

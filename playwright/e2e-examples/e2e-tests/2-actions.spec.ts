@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
  * by the completed items to ensure that the item is not visible anymore.
  * @see https://playwright.dev/docs/api/class-locator
  */
-test('basic interaction @T8649e125', async ({ page }) => {
+test('basic interaction', async ({ page }) => {
   const inputBox = page.locator('input.new-todo');
   const todoList = page.locator('.todo-list');
 
