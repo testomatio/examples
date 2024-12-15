@@ -21,7 +21,10 @@ const config: PlaywrightTestConfig = {
   },
   reporter: [
     ['list'],
-    ['@testomatio/reporter/lib/adapter/playwright.js', {
+    // both should work with v2.0+
+    // full path
+    // ['@testomatio/reporter/lib/adapter/playwright.js', {
+    ['@testomatio/reporter/playwright', {
       apiKey: process.env.TESTOMATIO,
     }]
   ],
