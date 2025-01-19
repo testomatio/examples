@@ -31,7 +31,7 @@ jobs:
       - name: Playwright browser updates
         run: npx playwright install
       - name: Run tests
-        run: npmr run test
+        run: npm run test
         # env:
         #   TESTOMATIO: "${{ secrets.TESTOMATIO_PLAYWRIGHT }}"
         #   TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
