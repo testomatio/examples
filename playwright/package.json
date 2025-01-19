@@ -17,7 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@playwright/test": "^1.46.1",
-    "@testomatio/reporter": "file:../../reporter/testomatio-reporter-2.0.0.tgz",
+    "@testomatio/reporter": "file:./reporter/testomatio-reporter-2.0.0.tgz",
     "dotenv": "^16.4.5"
   }
 }
