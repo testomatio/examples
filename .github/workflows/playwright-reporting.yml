@@ -31,7 +31,7 @@ jobs:
       - name: Playwright browser updates
         run: npx playwright install
       - name: Run tests
-        run: echo process.env.GITHUB_WORKFLOW && echo process.env.GITHUB_REF && echo process.env.GITHUB_REPOSITORY && npm run test
+        run: echo $GITHUB_WORKFLOW && echo $GITHUB_REF && echo $GITHUB_REPOSITORY && npm run test
         # env:
         #   TESTOMATIO: "${{ secrets.TESTOMATIO_PLAYWRIGHT }}"
         #   TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
