@@ -6,6 +6,7 @@ name: Playwright example reporting results
 on:
   schedule:
     - cron: "20 5 */6 * *"
+  pull_request:
 
 jobs:
   reporting:
