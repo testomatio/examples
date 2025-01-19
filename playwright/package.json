@@ -6,7 +6,8 @@
   "scripts": {
     "test:e2e-examples": "npx playwright test --config e2e-examples/playwright-e2e.config.ts",
     "test:smoke-examples": "npx playwright test --config e2e-examples/playwright-smoke.config.ts",
-    "test:e2e": "npx playwright test"
+    "test:e2e": "npx playwright test",
+    "test": "TESTOMATIO=tstmt_qmj-XjR8NsE8LGdcn_7PSONmm3zj6swJ1g1698341001 TESTOMATIO_URL=https://beta.testomat.io npx playwright test"
   },
   "keywords": [
     "e2e",
