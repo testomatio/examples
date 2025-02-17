@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  # Uncomment to run the workflow on manual trigger
+  # workflow_dispatch:
+  #   inputs:
+  #     grep:
+  #       description: 'tests to grep '
+  #       required: false
+  #       default: ''
+  #     run:
+  #       required: false
+
+  # Uncomment to run the workflow on a schedule
+  # schedule:
+  #   - cron: "0 1 * * 1-5"
+
+jobs:
+  test:
+    timeout-minutes: 300
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+      - name: Run Tests
+        run: npx start-test-run -c 'wdio run ./wdio.conf.ts'
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          TESTOMATIO: ${{ secrets.TESTOMATIO }}
+          TESTOMATIO_RUN: ${{ github.event.inputs.run }}
+          TESTOMATIO_URL: ${{ secrets.TESTOMATIO_URL }}
+          TESTOMATIO_PRIVATE_ARTIFACTS: 1

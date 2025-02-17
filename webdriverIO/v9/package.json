@@ -1,0 +1,28 @@
+{
+  "name": "testomat-example-wdio-v9",
+  "version": "1.0.0",
+  "description": "Example project for Testomat.io with WebdriverIO v9",
+  "main": "index.js",
+  "scripts": {
+    "test": "dotenv -e .env -- npx start-test-run -c 'wdio run ./wdio.conf.ts'",
+    "test:debug": "DEBUG=@testomatio/reporter:uploader,@testomatio/reporter:client dotenv -e .env -- npx start-test-run -c 'wdio run ./wdio.conf.ts' > log.txt 2>&1",
+    "test:wdio": "wdio run ./wdio.conf.ts"
+  },
+  "keywords": [
+    "tests",
+    "wdio",
+    "testomatio",
+    "example"
+  ],
+  "author": "Leonid Maievskyi",
+  "license": "ISC",
+  "devDependencies": {
+    "@testomatio/reporter": "^1.6.13",
+    "@wdio/cli": "^9.9.1",
+    "@wdio/local-runner": "^9.9.1",
+    "@wdio/mocha-framework": "^9.9.0",
+    "@wdio/spec-reporter": "^9.9.0",
+    "dotenv-cli": "^7.4.4",
+    "dotenv": "^16.4.7"
+  }
+}
