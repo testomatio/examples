@@ -1,0 +1,50 @@
+name: Pre merge test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  # schedule:
+  #   - cron: "0 0 * * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+          virtualenvs-path: .venv
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+      - name: Update Dependencies
+        run: poetry lock
+      - name: Install Dependencies
+        run: poetry install --no-interaction --no-root
+      - name: Install Playwright Browsers
+        run: |
+          PLAYWRIGHT_VERSION=$(grep -E '^playwright = "[^"]*"' pyproject.toml | sed -E 's/playwright = "([^"]*)".*$/\1/')
+          npx playwright@$PLAYWRIGHT_VERSION install --with-deps
+      - name: Run Tests
+        run: |
+          source .venv/bin/activate
+          xvfb-run env TESTOMATIO_PRIVATE_ARTIFACTS=1 \
+            TESTOMATIO_URL=${{ secrets.TESTOMATIO_URL }} \
+            TESTOMATIO=${{ secrets.TESTOMATIO }} \
+            TESTOMATIO_ENV="${{ secrets.TESTOMATIO_ENV }}" \
+            pytest --testomatio report
