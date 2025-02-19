@@ -22,7 +22,7 @@
     "@wdio/local-runner": "^9.9.1",
     "@wdio/mocha-framework": "^9.9.0",
     "@wdio/spec-reporter": "^9.9.0",
-    "dotenv-cli": "^7.4.4",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "dotenv-cli": "^7.4.4"
   }
 }

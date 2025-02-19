@@ -1,6 +1,6 @@
 # 📚 E2E-tests: WebdriverIO + Testomat.io Integration
 
-This project contains end-to-end tests written in **TypeScript** using **WebdriverIO**. The tests demonstrate advanced usage of the Allure reporter (steps, logs, attachments, custom tags, etc.) and integrate with **Testomat.io** for enhanced reporting, categorization, and CI/CD analytics.
+This project contains end-to-end tests written in **TypeScript** using **WebdriverIO**. The tests demonstrate advanced usage of Testomat.io reporter for enhanced test reporting with steps, logs, attachments, custom tags, and more. The integration with **Testomat.io** provides comprehensive reporting, categorization, and CI/CD analytics capabilities.
 
 ---
 
@@ -18,7 +18,7 @@ This project is designed to:
 ## 🛠️ Features
 
 - **Page Object Model (POM):** Separates page interactions from test logic.
-- **Advanced Reporting:** Utilizes Allure steps, custom labels (e.g., `@Smoke`, `@Regression`, `@Critical`, `@UI`, `@API`), and attachments (screenshots, logs) for detailed test documentation.
+- **Advanced Reporting:** Utilizes Testomat.io steps, custom labels (e.g., `@Smoke`, `@Regression`, `@Critical`, `@UI`, `@API`), and attachments (screenshots, logs) for detailed test documentation.
 - **Random Failure Simulation:** Uses helper functions to inject random failures, allowing you to test the robustness of error reporting.
 - **Testomat.io Integration:** Automatically uploads test results via CI/CD pipelines.
 - **Fast Execution:** Minimal timeouts (e.g., 5000 ms) ensure all tests complete quickly.
@@ -53,7 +53,7 @@ This project is designed to:
 ## ⚙️ Configuration
 
 1. **Configure WebdriverIO:**\
-   Edit the `wdio.conf.ts` file to adjust WebdriverIO settings (base URL, timeouts, reporters, etc.). Ensure the Allure reporter is enabled.
+   Edit the `wdio.conf.ts` file to adjust WebdriverIO settings (base URL, timeouts, reporters, etc.).
 
 2. **Integrate Testomat.io:**\
    The CI/CD pipeline is configured to use the Testomat.io uploader. Set the following secrets in your CI environment:
@@ -109,7 +109,10 @@ This project is designed to:
 
 Tests are written in TypeScript using WebdriverIO. Each test includes:
 
-- **Steps and Logging:** Uses `allure.addStep` and `console.log` to record key actions.
+- **Steps and Logging:** Uses `step()`, `log()`, and `meta()` from `@testomatio/reporter` to record test steps, log messages, and metadata. For example:
+  - `step('Added new todo and verified list length')` - Records test steps
+  - `log('Form submission failed as expected: ${error}')` - Logs detailed messages
+  - `meta('FEATURE', 'TodoMVC UI')` - Adds metadata like feature name, priority, requirements
 - **Artifacts:** Screenshots are captured after each test and attached to the report.
 - **Custom Tags and Parameters:** Tests are tagged (e.g., `@Smoke`, `@Regression`, `@Critical`, `@UI`, `@API`) and include additional information such as Priority, Risk, and Business Requirement.
 
@@ -117,15 +120,11 @@ Tests are written in TypeScript using WebdriverIO. Each test includes:
 
 ```typescript
 it('should fill the form with valid data @Smoke @UI', () => {
-  if (typeof allure !== 'undefined') {
-    allure.addLabel('tag', 'Smoke');
-    allure.addStep('Starting test: filling out the checkout form with valid data');
-  }
+  meta('FEATURE','Checkout Form');
+  step('Starting test: filling out the checkout form with valid data');
   checkoutPage.fillForm('John', 'Doe', 'johndoe', 'john@example.com', '123 Main St', 'United States', 'California', '90210');
-  if (typeof allure !== 'undefined') {
-    allure.addStep('Form filled successfully');
-    console.log('Form filled successfully');
-  }
+  step('Form filled successfully');
+  log('Form filled successfully');
 });
 ```
 
@@ -143,7 +142,7 @@ it('should fill the form with valid data @Smoke @UI', () => {
    Adjust the `maxInstances` setting in your `wdio.conf.ts` file to run tests in parallel.
 
 3. **Run with Testomat.io Integration:**\
-   After tests complete, the CI/CD pipeline will automatically generate the Allure report and upload the results to Testomat.io.
+   After tests complete, the CI/CD pipeline will automatically upload the test results to Testomat.io.
 
 ---
 
@@ -175,7 +174,7 @@ The project includes a YAML file for CI/CD pipelines (e.g., GitHub Actions) that
 
 - Installs dependencies.
 - Runs WebdriverIO tests.
-- Generates the Allure report.
+- Generates test reports.
 - Uploads results to Testomat.io.
 
 The project includes a GitHub Actions workflow in `.github/workflows/testomatio.yml` that:
@@ -183,7 +182,6 @@ The project includes a GitHub Actions workflow in `.github/workflows/testomatio.
 - Runs on push/PR to master branch
 - Uses Ubuntu 24.04 and Node.js 22
 - Executes WebdriverIO tests with Testomat.io integration
-- Generates and uploads Allure reports as artifacts
 - Configures timeouts and permissions
 
 ---

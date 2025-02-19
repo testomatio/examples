@@ -1,14 +1,10 @@
-import type AllureReporter from '@wdio/allure-reporter';
-
-declare const allure: typeof AllureReporter;
-
+import { step, meta } from '@testomatio/reporter'; 
 export default class CheckoutPage {
-  // Відкриває сторінку Checkout
+
   public async open(): Promise<void> {
     await browser.url('https://getbootstrap.com/docs/5.1/examples/checkout/');
   }
 
-  // Селектори
   get firstNameInput() { return $('#firstName'); }
   get lastNameInput() { return $('#lastName'); }
   get usernameInput() { return $('#username'); }
@@ -19,7 +15,6 @@ export default class CheckoutPage {
   get zipInput() { return $('#zip'); }
   get submitButton() { return $('button[type="submit"]'); }
 
-  // Заповнює форму з переданими даними
   public async fillForm(
     firstName: string,
     lastName: string,
@@ -40,22 +35,15 @@ export default class CheckoutPage {
     await this.stateSelect.selectByVisibleText(state);
     await this.zipInput.setValue(zip);
 
-    // Advanced Allure reporter: додаємо крок та вкладення
-    if (typeof allure !== 'undefined') {
-      allure.addStep(`Filled checkout form with ${firstName} ${lastName}`);
-      allure.addAttachment(
-        'Form Data',
+    step(`Filled checkout form with ${firstName} ${lastName}`);
+      meta('Form Data',
         JSON.stringify({ firstName, lastName, username, email, address, country, state, zip }),
         'application/json'
       );
-    }
   }
 
-  // Натискає кнопку сабміту
   public async submitForm(): Promise<void> {
     await this.submitButton.click();
-    if (typeof allure !== 'undefined') {
-      allure.addStep('Submitted the checkout form');
-    }
+    step('Submitted the checkout form');
   }
 }
