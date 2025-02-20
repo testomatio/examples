@@ -31,6 +31,12 @@ class Server {
         break;
 
       default:
+    if (path.normalize(decodeURI(req.url)) !== decodeURI(req.url)) {
+        res.statusCode = 403;
+        res.end();
+        return;
+    }
+    
         const localFilePath = path.join(__dirname, 'assets', req.url === '/' ? 'index.html' : req.url);
         function shouldServe() {
           try {
