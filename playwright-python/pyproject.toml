@@ -8,7 +8,7 @@ skip = ["env", "venv"]
 
 [tool.poetry]
 authors = ["nirtal85 <nirt236@gmail.com>"]
-description = "Playwright Python example project with pytest and Allure report"
+description = "Playwright Python example project with pytest and Testomatio report"
 keywords = ["playwright", "automation", "testing", "web"]
 name = "playwright-python"
 packages = [{include = "playwright_python"}, {include = "pages"}]
@@ -16,7 +16,6 @@ readme = "README.md"
 version = "0.1.0"
 
 [tool.poetry.dependencies]
-allure-pytest = "2.13.5"
 axe-playwright-python = "0.1.4"
 playwright = "1.49.1"
 pytest = "^7.0.0"
@@ -35,14 +34,6 @@ pre-commit = "4.1.0"
 
 [tool.pytest.ini_options]
 addopts = [
-  "--clean-alluredir",
-  "--alluredir=allure-results",
-  "--allure-link-pattern",
-  "issue:https://{}",
-  "--allure-link-pattern",
-  "link:https://{}",
-  "--allure-link-pattern",
-  "tms:https://{}",
   "-ra",
   "--color=yes",
   "--browser-channel=chrome",
@@ -57,7 +48,6 @@ log_cli_date_format = "%Y-%m-%d %H:%M:%S"
 log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
 log_cli_level = "INFO"
 markers = [
-  "devRun: marks tests that run before merge to the main branch",
   "random: marks tests that may randomly fail",
   "form: marks form related tests",
   "checkout: marks checkout related tests",

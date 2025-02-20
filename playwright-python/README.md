@@ -1,6 +1,6 @@
 # 🎭 Playwright Python Example 🎭
 
-This project contains end-to-end tests written in **Python** using **Playwright**. The tests demonstrate advanced usage of the Allure reporter (steps, logs, attachments, custom tags, etc.) and integrate with **Testomat.io** for enhanced reporting, categorization, and CI/CD analytics.
+This project contains end-to-end tests written in **Python** using **Playwright**. The tests demonstrate advanced usage of Testomat.io for enhanced reporting, categorization, and CI/CD analytics.
 
 ---
 
@@ -18,7 +18,7 @@ This project is designed to:
 ## 🛠️ Features
 
 - **Page Object Model (POM):** Separates page interactions from test logic.
-- **Advanced Reporting:** Utilizes Allure steps, custom labels (e.g., `@Smoke`, `@Regression`, `@Critical`, `@UI`, `@API`), and attachments (screenshots, logs) for detailed test documentation.
+- **Advanced Reporting:** Utilizes Testomat.io for detailed test reporting with custom labels (e.g., `@Smoke`, `@Regression`, `@Critical`, `@UI`, `@API`), and attachments (screenshots, logs).
 - **Random Failure Simulation:** Uses helper functions to inject random failures, allowing you to test the robustness of error reporting.
 - **Testomat.io Integration:** Automatically uploads test results via CI/CD pipelines.
 - **Fast Execution:** Minimal timeouts (e.g., 5000 ms) ensure all tests complete quickly.
@@ -28,7 +28,6 @@ This project is designed to:
 
 | Tool                                                                     | Description                                                                                         |
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| [allure-pytest](https://pypi.org/project/allure-pytest/)                 | Allure reporting with your Pytest tests for better reporting                                        |
 | [axe-playwright-python](https://pypi.org/project/axe-playwright-python/) | Python library for running accessibility checks with Playwright                                     |
 | [playwright](https://pypi.org/project/playwright/)                       | Python library to automate the Chromium, WebKit, and Firefox browsers through a single API.         |
 | [pytest](https://pypi.org/project/pytest/)                               | Popular testing framework for Python                                                                |
@@ -51,8 +50,8 @@ cd playwright-python
 #### For Windows:
 ```bash
 py -m pip install --user virtualenv
-py -m venv env
-source env/Scripts/activate
+py -m venv .venv
+source .venv/Scripts/activate
 ```
 
 #### For Mac:
@@ -96,28 +95,8 @@ pytest -m <tag_name>
 
 ## 📊 Viewing Test Results
 
-### Install Allure Commandline To View Test results
+We use Testomat.io to view test results.
 
-#### For Windows:
-
-Follow the instructions [here](https://scoop.sh/) to install Scoop.<br>
-Run the following command to install Allure using Scoop:
-
-```bash
-scoop install allure
-```
-
-#### For Mac:
-
-```bash
-brew install allure
-```
-
-### View Results Locally:
-
-```bash
-allure serve allure-results
-```
 ## ℹ️ View Help And Other CLI Options
 
 ```bash

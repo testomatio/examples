@@ -1,17 +1,18 @@
 import random
+import allure
 import os
 from datetime import datetime
 import pytest
 from typing import Optional
-from playwright.sync_api import Page
+from selenium.webdriver.remote.webdriver import WebDriver
 
-def random_failure(probability: float = 0.2, page: Optional[Page] = None) -> None:
+def random_failure(probability: float = 0.2, driver: Optional[WebDriver] = None) -> None:
     """
     Simulates a random test failure with specified probability.
     
     Args:
         probability (float): Probability of failure (0.0 to 1.0)
-        page (Optional[Page]): Playwright page object for screenshot
+        driver (Optional[WebDriver]): Selenium WebDriver instance for screenshot
     
     Raises:
         Exception: When random failure is triggered
@@ -20,20 +21,25 @@ def random_failure(probability: float = 0.2, page: Optional[Page] = None) -> Non
         raise ValueError("Probability must be between 0 and 1")
         
     if random.random() < probability:
-        if page:
+        if driver:
             try:
-                take_screenshot(page, "random_failure")
+                take_screenshot(driver, "random_failure")
             except Exception as e:
                 print(f"Failed to take screenshot: {e}")
         
-            raise Exception("Simulated random failure for testing reporting")
+        allure.attach(
+            "Simulated failure triggered.", 
+            name="Failure Log", 
+            attachment_type=allure.attachment_type.TEXT
+        )
+        pytest.fail("Simulated random failure for testing reporting")
 
-def take_screenshot(page: Page, name: str) -> None:
+def take_screenshot(driver: WebDriver, name: str) -> None:
     """
     Takes a screenshot of the current page state.
     
     Args:
-        page (Page): Playwright page object
+        driver (WebDriver): Selenium WebDriver instance
         name (str): Name for the screenshot file
     """
     try:
@@ -46,14 +52,24 @@ def take_screenshot(page: Page, name: str) -> None:
                                      f'failure_{name}_{timestamp}.png')
         
         # Ensure page is loaded
-        page.wait_for_load_state('load')
+        driver.wait_for_load_state('load')
         
         # Take full page screenshot
-        page.screenshot(
+        driver.screenshot(
             path=screenshot_path,
             full_page=True,
             timeout=5000
         )
+        
+        # Attach to Allure if file exists
+        if os.path.exists(screenshot_path):
+            with open(screenshot_path, 'rb') as screenshot_file:
+                allure.attach(
+                    screenshot_file.read(),
+                    name=f"Screenshot_{name}",
+                    attachment_type=allure.attachment_type.PNG
+                )
+            
     except Exception as e:
         print(f"Error taking screenshot: {str(e)}")
         import traceback
@@ -70,8 +86,8 @@ def pytest_runtest_makereport(item: pytest.Item, call) -> None:
     
     if rep.when == "call" and rep.failed:
         try:
-            page = item.funcargs.get('page')
-            if page:
-                take_screenshot(page, item.name)
+            driver = item.funcargs.get('driver')
+            if driver:
+                take_screenshot(driver, item.name)
         except Exception as e:
             print(f"Failed to take screenshot in hook: {str(e)}")
