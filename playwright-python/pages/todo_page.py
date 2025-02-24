@@ -1,4 +1,3 @@
-import allure
 from playwright.sync_api import Page
 from typing import List
 
@@ -15,7 +14,6 @@ class TodoPage:
         self.TOGGLE_CHECKBOX = "input.toggle"
         self.DESTROY_BUTTON = ".destroy"
         
-    @allure.step("Navigate to TodoMVC page")
     def navigate(self) -> None:
         """Navigate to the TodoMVC application."""
         self.page.goto(self.url, timeout=10000)
@@ -25,7 +23,6 @@ class TodoPage:
             attachment_type=allure.attachment_type.TEXT
         )
 
-    @allure.step("Add todo: {todo_text}")
     def add_todo(self, todo_text: str) -> None:
         """
         Add a new todo item.
@@ -36,12 +33,10 @@ class TodoPage:
         self.page.fill(self.TODO_INPUT, todo_text)
         self.page.keyboard.press("Enter")
 
-    @allure.step("Get todo count")
     def get_todo_count(self) -> int:
         """Get the number of todo items."""
         return len(self.page.query_selector_all(self.TODO_ITEMS))
 
-    @allure.step("Toggle todo at index {index}")
     def toggle_todo(self, index: int = 0) -> None:
         """
         Toggle the completion status of a todo item.
@@ -62,7 +57,6 @@ class TodoPage:
             
         checkbox.click()
 
-    @allure.step("Delete todo at index {index}")
     def delete_todo(self, index: int) -> None:
         """
         Delete a todo item.
