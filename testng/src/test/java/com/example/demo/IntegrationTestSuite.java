@@ -1,15 +1,17 @@
-package tests;
+package com.example.demo;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import java.util.Random;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
-import static io.restassured.RestAssured.*;
-import org.junit.Assert;
+import java.util.Random;
+
+import static io.restassured.RestAssured.given;
 
 public class IntegrationTestSuite {
     private static final Random random = new Random();
@@ -114,7 +116,7 @@ public class IntegrationTestSuite {
         logResponse(orderResponse, "createPetAndOrderTest_order");
         orderId = orderResponse.jsonPath().getLong("id");
         
-        Assert.assertEquals(200, orderResponse.getStatusCode());
+        Assert.assertEquals(orderResponse.getStatusCode(), 200, "Status code should be 200");
     }
 
     @Test
@@ -161,8 +163,10 @@ public class IntegrationTestSuite {
         logResponse(response, "randomOrderStatusTest_get");
         // Note: The API might return 404 if the order doesn't exist
         // We'll verify that the response is either 200 (found) or 404 (not found)
-        Assert.assertTrue("Response should be either 200 or 404", 
-            response.getStatusCode() == 200 || response.getStatusCode() == 404);
+        Assert.assertTrue(
+            response.getStatusCode() == 200 || response.getStatusCode() == 404,
+            "Response should be either 200 or 404"
+        );
     }
 
     @Test
@@ -209,8 +213,10 @@ public class IntegrationTestSuite {
         logResponse(response, "randomResourceCleanupTest_delete");
         // Note: The API might return 404 if the order doesn't exist
         // We'll verify that the response is either 200 (success) or 404 (not found)
-        Assert.assertTrue("Response should be either 200 or 404", 
-            response.getStatusCode() == 200 || response.getStatusCode() == 404);
+        Assert.assertTrue(
+            response.getStatusCode() == 200 || response.getStatusCode() == 404,
+            "Response should be either 200 or 404"
+        );
     }
 
     @Test
@@ -246,8 +252,10 @@ public class IntegrationTestSuite {
         logResponse(orderResponse, "deleteOrderAndPetTest_delete_order");
         // Note: The API might return 404 if the order doesn't exist
         // We'll verify that the response is either 200 (success) or 404 (not found)
-        Assert.assertTrue("Response should be either 200 or 404", 
-            orderResponse.getStatusCode() == 200 || orderResponse.getStatusCode() == 404);
+        Assert.assertTrue(
+            orderResponse.getStatusCode() == 200 || orderResponse.getStatusCode() == 404,
+            "Response should be either 200 or 404"
+        );
         
         logStep("Deleting pet");
         Response petResponse = given()
@@ -257,7 +265,9 @@ public class IntegrationTestSuite {
         logResponse(petResponse, "deleteOrderAndPetTest_delete_pet");
         // Note: The API might return 404 if the pet doesn't exist
         // We'll verify that the response is either 200 (success) or 404 (not found)
-        Assert.assertTrue("Response should be either 200 or 404", 
-            petResponse.getStatusCode() == 200 || petResponse.getStatusCode() == 404);
+        Assert.assertTrue(
+            petResponse.getStatusCode() == 200 || petResponse.getStatusCode() == 404,
+            "Response should be either 200 or 404"
+        );
     }
 } 

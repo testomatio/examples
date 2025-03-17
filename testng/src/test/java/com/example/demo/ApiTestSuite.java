@@ -1,15 +1,15 @@
-package tests;
+package com.example.demo;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.Assert;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import java.util.Random;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
-import static io.restassured.RestAssured.*;
+import java.util.Random;
 
 public class ApiTestSuite {
     private static final Random random = new Random();
@@ -32,7 +32,7 @@ public class ApiTestSuite {
         category.put("name", "Dogs");
         pet.put("category", category);
         
-        Response response = given()
+        Response response = RestAssured.given()
                 .contentType(ContentType.JSON)
                 .body(pet)
                 .when()
@@ -47,6 +47,11 @@ public class ApiTestSuite {
 
     private void logInfo(String message) {
         System.out.println("[TEST] Info: " + message);
+    }
+
+    @SuppressWarnings("unused")
+    private void logError(String message) {
+        System.out.println("[TEST] Error: " + message);
     }
 
     private void addKeyValue(String key, String value) {
@@ -83,15 +88,15 @@ public class ApiTestSuite {
         addMetadata("endpoint", "/pet");
         
         logStep("Sending create pet request");
-        Response response = given()
+        Response response = RestAssured.given()
                 .contentType(ContentType.JSON)
                 .body(pet)
                 .when()
                 .post("/pet");
 
         logResponse(response, "createPetTest");
-        Assert.assertEquals(200, response.getStatusCode());
-        Assert.assertEquals("Test Pet", response.jsonPath().getString("name"));
+        Assert.assertEquals(response.getStatusCode(), 200, "Status code should be 200");
+        Assert.assertEquals(response.jsonPath().getString("name"), "Test Pet", "Pet name should match");
         petId = response.jsonPath().getLong("id");
         logInfo("Created pet with ID: " + petId);
     }
@@ -108,23 +113,25 @@ public class ApiTestSuite {
         
         if (shouldFail) {
             logStep("Attempting to get pet with ID: -1");
-            Response response = given()
+            Response response = RestAssured.given()
                     .pathParam("petId", -1)
                     .get("/pet/{petId}");
                     
             logResponse(response, "randomInvalidPetIdTest_invalid");
-            Assert.assertEquals(404, response.getStatusCode());
+            Assert.assertEquals(response.getStatusCode(), 404, "Status code should be 404 for invalid pet ID");
         } else {
             logStep("Getting valid pet");
-            Response response = given()
+            Response response = RestAssured.given()
                     .pathParam("petId", petId)
                     .get("/pet/{petId}");
                     
             logResponse(response, "randomInvalidPetIdTest_valid");
             // Note: The API might return 404 if the pet doesn't exist
             // We'll verify that the response is either 200 (found) or 404 (not found)
-            Assert.assertTrue("Response should be either 200 or 404", 
-                response.getStatusCode() == 200 || response.getStatusCode() == 404);
+            Assert.assertTrue(
+                response.getStatusCode() == 200 || response.getStatusCode() == 404,
+                "Response should be either 200 or 404"
+            );
         }
     }
 
@@ -145,16 +152,16 @@ public class ApiTestSuite {
         addKeyValue("test_type", "api_update");
         
         logStep("Sending update pet request");
-        Response response = given()
+        Response response = RestAssured.given()
                 .contentType(ContentType.JSON)
                 .body(pet)
                 .when()
                 .put("/pet");
 
         logResponse(response, "updatePetTest");
-        Assert.assertEquals(200, response.getStatusCode());
-        Assert.assertEquals("Updated Pet", response.jsonPath().getString("name"));
-        Assert.assertEquals("sold", response.jsonPath().getString("status"));
+        Assert.assertEquals(response.getStatusCode(), 200, "Status code should be 200");
+        Assert.assertEquals(response.jsonPath().getString("name"), "Updated Pet", "Updated pet name should match");
+        Assert.assertEquals(response.jsonPath().getString("status"), "sold", "Updated pet status should match");
     }
 
     @Test
@@ -164,13 +171,13 @@ public class ApiTestSuite {
         addKeyValue("test_type", "api_find");
         
         logStep("Sending find pets request");
-        Response response = given()
+        Response response = RestAssured.given()
                 .queryParam("status", "available")
                 .get("/pet/findByStatus");
             
         logResponse(response, "findPetsByStatusTest");
-        Assert.assertEquals(200, response.getStatusCode());
-        Assert.assertTrue(response.jsonPath().getList("$").size() > 0);
+        Assert.assertEquals(response.getStatusCode(), 200, "Status code should be 200");
+        Assert.assertTrue(response.jsonPath().getList("$").size() > 0, "Response should contain at least one pet");
     }
 
     @Test
@@ -185,23 +192,23 @@ public class ApiTestSuite {
         
         if (shouldFail) {
             logStep("Attempting to find pets with status: invalid");
-            Response response = given()
+            Response response = RestAssured.given()
                     .queryParam("status", "invalid")
                     .get("/pet/findByStatus");
                     
             logResponse(response, "randomInvalidStatusTest");
             // The API returns empty array for invalid status instead of 400
-            Assert.assertEquals(200, response.getStatusCode());
-            Assert.assertTrue(response.jsonPath().getList("$").isEmpty());
+            Assert.assertEquals(response.getStatusCode(), 200, "Status code should be 200 even for invalid status");
+            Assert.assertTrue(response.jsonPath().getList("$").isEmpty(), "Response should be an empty array");
         } else {
             logStep("Attempting to find pets with status: available");
-            Response response = given()
+            Response response = RestAssured.given()
                     .queryParam("status", "available")
                     .get("/pet/findByStatus");
                     
             logResponse(response, "randomInvalidStatusTest");
-            Assert.assertEquals(200, response.getStatusCode());
-            Assert.assertTrue(response.jsonPath().getList("$").size() > 0);
+            Assert.assertEquals(response.getStatusCode(), 200, "Status code should be 200");
+            Assert.assertTrue(response.jsonPath().getList("$").size() > 0, "Response should contain at least one pet");
         }
     }
 } 
