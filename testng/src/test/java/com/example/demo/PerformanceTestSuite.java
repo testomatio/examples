@@ -1,19 +1,21 @@
-package tests;
+package com.example.demo;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.Assert;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import java.util.Random;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import static io.restassured.RestAssured.*;
+
+import static io.restassured.RestAssured.given;
 
 public class PerformanceTestSuite {
     private static final Random random = new Random();
@@ -92,9 +94,11 @@ public class PerformanceTestSuite {
         
         // Note: The API might return 404 if the pet doesn't exist
         // We'll verify that the response is either 200 (found) or 404 (not found)
-        Assert.assertTrue("Response should be either 200 or 404", 
-            response.getStatusCode() == 200 || response.getStatusCode() == 404);
-        Assert.assertTrue("Response time should be less than 1 second", responseTime < 1000);
+        Assert.assertTrue(
+            response.getStatusCode() == 200 || response.getStatusCode() == 404,
+            "Response should be either 200 or 404"
+        );
+        Assert.assertTrue(responseTime < 1000, "Response time should be less than 1 second");
     }
 
     @Test
@@ -121,8 +125,10 @@ public class PerformanceTestSuite {
         logResponse(response, "randomSlowResponseTest");
         // Note: The API might return 404 if the pet doesn't exist
         // We'll verify that the response is either 200 (found) or 404 (not found)
-        Assert.assertTrue("Response should be either 200 or 404", 
-            response.getStatusCode() == 200 || response.getStatusCode() == 404);
+        Assert.assertTrue(
+            response.getStatusCode() == 200 || response.getStatusCode() == 404,
+            "Response should be either 200 or 404"
+        );
     }
 
     @Test
@@ -154,8 +160,7 @@ public class PerformanceTestSuite {
             logError("Concurrent requests interrupted: " + e.getMessage());
         }
         
-        Assert.assertTrue("At least 80% of concurrent requests should succeed", 
-            successCount.get() >= 2);
+        Assert.assertTrue(successCount.get() >= 2, "At least 80% of concurrent requests should succeed");
     }
 
     @Test
@@ -178,8 +183,10 @@ public class PerformanceTestSuite {
                     logResponse(response, "randomHighLoadTest_" + requestId);
                     // Note: The API might return 404 if the pet doesn't exist
                     // We'll verify that the response is either 200 (found) or 404 (not found)
-                    Assert.assertTrue("Response should be either 200 or 404", 
-                        response.getStatusCode() == 200 || response.getStatusCode() == 404);
+                    Assert.assertTrue(
+                        response.getStatusCode() == 200 || response.getStatusCode() == 404,
+                        "Response should be either 200 or 404"
+                    );
                 });
             }
             executor.shutdown();
@@ -196,8 +203,10 @@ public class PerformanceTestSuite {
             logResponse(response, "randomHighLoadTest");
             // Note: The API might return 404 if the pet doesn't exist
             // We'll verify that the response is either 200 (found) or 404 (not found)
-            Assert.assertTrue("Response should be either 200 or 404", 
-                response.getStatusCode() == 200 || response.getStatusCode() == 404);
+            Assert.assertTrue(
+                response.getStatusCode() == 200 || response.getStatusCode() == 404,
+                "Response should be either 200 or 404"
+            );
         }
     }
 
@@ -220,8 +229,10 @@ public class PerformanceTestSuite {
         
         // Note: The API might return 404 if the pet doesn't exist
         // We'll verify that the response is either 200 (found) or 404 (not found)
-        Assert.assertTrue("Response should be either 200 or 404", 
-            response.getStatusCode() == 200 || response.getStatusCode() == 404);
-        Assert.assertTrue("Memory usage should be less than 1MB", memoryUsed < 1000000);
+        Assert.assertTrue(
+            response.getStatusCode() == 200 || response.getStatusCode() == 404,
+            "Response should be either 200 or 404"
+        );
+        Assert.assertTrue(memoryUsed < 1000000, "Memory usage should be less than 1MB");
     }
 } 

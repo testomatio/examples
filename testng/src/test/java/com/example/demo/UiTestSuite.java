@@ -1,18 +1,19 @@
-package tests;
+package com.example.demo;
 
-import org.junit.BeforeClass;
-import org.junit.AfterClass;
-import org.junit.Test;
-import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -20,10 +21,10 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Random;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class UiTestSuite {
     private static final Random random = new Random();
@@ -62,6 +63,7 @@ public class UiTestSuite {
         System.out.println("[TEST] Info: " + message);
     }
 
+    @SuppressWarnings("unused")
     private void logError(String message) {
         System.out.println("[TEST] Error: " + message);
     }
@@ -114,7 +116,7 @@ public class UiTestSuite {
         logStep("Verifying successful login");
         try {
             WebElement signOutLink = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(), 'Sign Out')]")));
-            Assert.assertTrue("Sign Out link should be visible", signOutLink.isDisplayed());
+            Assert.assertTrue(signOutLink.isDisplayed(), "Sign Out link should be visible");
             logInfo("Login successful");
             takeScreenshot("login_success");
         } catch (Exception e) {
@@ -145,7 +147,7 @@ public class UiTestSuite {
         } else {
             logStep("Finding existing element");
             WebElement searchContent = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SearchContent")));
-            Assert.assertTrue("Search content should be visible", searchContent.isDisplayed());
+            Assert.assertTrue(searchContent.isDisplayed(), "Search content should be visible");
         }
         
         takeScreenshot("random_element_result");
@@ -165,7 +167,7 @@ public class UiTestSuite {
         logStep("Verifying item in cart");
         try {
             WebElement cartItem = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//td[contains(text(), 'Bulldog')]")));
-            Assert.assertTrue("Cart should contain Bulldog", cartItem.isDisplayed());
+            Assert.assertTrue(cartItem.isDisplayed(), "Cart should contain Bulldog");
         } catch (Exception e) {
             logError("Cart verification failed: " + e.getMessage());
             takeScreenshot("cart_failure");
@@ -196,7 +198,7 @@ public class UiTestSuite {
         
         logStep("Verifying page load");
         WebElement searchContent = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SearchContent")));
-        Assert.assertTrue("Search content should be visible", searchContent.isDisplayed());
+        Assert.assertTrue(searchContent.isDisplayed(), "Search content should be visible");
         
         takeScreenshot("timeout_result");
     }
@@ -228,13 +230,13 @@ public class UiTestSuite {
             
             // Wait for the search results to appear
             WebElement searchResults = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Catalog")));
-            Assert.assertTrue("Search results should be visible", searchResults.isDisplayed());
+            Assert.assertTrue(searchResults.isDisplayed(), "Search results should be visible");
             
             // Look for any product links that contain 'dog' in their text
             List<WebElement> productLinks = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
                 By.xpath("//a[contains(@href, 'viewProduct') and contains(translate(text(), 'DOG', 'dog'), 'dog')]")));
             
-            Assert.assertTrue("Should find at least one dog product", !productLinks.isEmpty());
+            Assert.assertTrue(!productLinks.isEmpty(), "Should find at least one dog product");
             
             // Log the found products
             logInfo("Found " + productLinks.size() + " dog products");
