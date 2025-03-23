@@ -1,0 +1,22 @@
+{
+  "name": "nightwatch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "devDependencies": {
+    "@swc/core": "^1.11.8",
+    "nightwatch": "^3.12.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@testomatio/reporter": "^2.1.0-beta-nightwatch"
+  }
+}
