@@ -1,4 +1,4 @@
-import {NightwatchAPI, NightwatchTests} from 'nightwatch';
+import { NightwatchAPI, NightwatchTests } from 'nightwatch';
 
 const home: NightwatchTests = {
   'Google title test': () => {
@@ -8,8 +8,8 @@ const home: NightwatchTests = {
   'Google search test': () => {
     browser
       .setValue('textarea[name=q]', 'nightwatchjs')
-      .perform(function(this: NightwatchAPI) {
-        const actions = this.actions({async: true});
+      .perform(function (this: NightwatchAPI) {
+        const actions = this.actions({ async: true });
 
         return actions.keyDown(this.Keys['ENTER']).keyUp(this.Keys['ENTER']);
       })
