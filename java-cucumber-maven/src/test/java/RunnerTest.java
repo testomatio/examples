@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports",
+                "json:target/cucumber-reports/cucumber.json",
                 "com.testomatio.reporter.core.framework_integration.CucumberListener"
         },
         tags = "not @ignore"
