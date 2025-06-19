@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
         glue = "steps",
         plugin = {
                 "pretty",
-                "html:target/cucumber-reports",
                 "json:target/cucumber-reports/cucumber.json",
+                "html:target/cucumber-reports/report",
                 "com.testomatio.reporter.core.framework_integration.CucumberListener"
         },
         tags = "not @ignore"
