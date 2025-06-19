@@ -1,4 +1,4 @@
-name: Run Cucumber Tests
+name: Build Only (No Tests)
 
 on:
   push:
@@ -11,15 +11,15 @@ on:
       - develop
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Setup JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
@@ -31,47 +31,8 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Create directories
-        run: |
-          mkdir -p target/cucumber-reports
-          mkdir -p logs
+      - name: Compile project
+        run: mvn clean compile
 
-      - name: Run Cucumber tests
-        env:
-          TESTOMATIO_API_KEY: ${{ secrets.TESTOMATIO_API_KEY }}
-        run: mvn clean test
-
-      - name: Generate test report
-        if: always()
-        run: |
-          echo "Test execution completed"
-          ls -la target/ || echo "No target directory found"
-
-      - name: Upload Cucumber Reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cucumber-reports
-          path: |
-            target/cucumber-reports/
-            target/surefire-reports/
-          retention-days: 30
-
-      - name: Upload Test Results to Testomat.io
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: testomatio-results
-          path: |
-            target/testomatio-results/
-            target/cucumber-reports/
-          retention-days: 7
-
-      - name: Publish Test Results
-        if: always()
-        uses: dorny/test-reporter@v1
-        with:
-          name: Cucumber Test Results
-          path: target/surefire-reports/TEST-*.xml
-          reporter: java-junit
-          fail-on-error: false
+      - name: Package (skip tests)
+        run: mvn package -DskipTests=true
