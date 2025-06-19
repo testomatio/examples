@@ -97,5 +97,8 @@ Run tests with
 where `tstmt_key` is your Testomat.io key from a particular project.
 
 As a result, you will see a run report in your Project tab -> Runs on Testomat.io
-<img src="img/runReport.png" alt="demo image"/>
+ 
+<div align="center">
+  <img src="img/runReport.png" alt="demo report result png" style="max-width: 75%; max-height: 420px;">
+</div>
     
