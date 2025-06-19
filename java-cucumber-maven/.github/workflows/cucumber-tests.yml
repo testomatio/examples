@@ -1,4 +1,4 @@
-name: Build Only (No Tests)
+name: Build Project
 
 on:
   push:
@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
@@ -34,5 +34,12 @@ jobs:
       - name: Compile project
         run: mvn clean compile
 
-      - name: Package (skip tests)
-        run: mvn package -DskipTests=true
+      - name: Compile test sources
+        run: mvn test-compile
+
+      - name: Validate project structure
+        run: |
+          echo "✅ Project compiled successfully"
+          echo "✅ Test sources compiled successfully"
+          echo "📁 Project structure:"
+          find . -name "*.java" -type f | head -10
