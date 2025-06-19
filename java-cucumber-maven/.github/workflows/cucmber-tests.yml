@@ -1,4 +1,3 @@
-# Add secret variable to your github repo named TESTOMATIO_API_KEY
 name: Run Cucumber Tests
 
 on:
@@ -14,7 +13,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,6 +30,11 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
+
+      - name: Create directories
+        run: |
+          mkdir -p target/cucumber-reports
+          mkdir -p logs
 
       - name: Run Cucumber tests
         env:
