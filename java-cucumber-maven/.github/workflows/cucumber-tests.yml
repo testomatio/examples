@@ -3,12 +3,12 @@ name: Build Only (No Tests)
 on:
   push:
     branches:
-      - main
-      - develop
+      - master
+      - java-cucumber-maven
   pull_request:
     branches:
-      - main
-      - develop
+      - master
+      - java-cucumber-maven
 
 jobs:
   build:
