@@ -17,21 +17,21 @@ This simple demo shows how Testomat.io Java reporter works in your project.
     │       ├── cucumber.properties
     │       └── testomatio.properties
     └── test/
-    ├── java/
-    │   ├── steps/
-    │   │   ├── NotificationSteps
-    │   │   ├── OrderSteps
-    │   │   ├── ProductSteps
-    │   │   ├── ReportSteps
-    │   │   └── UserSteps
-    │   └── RunnerTest
-    └── resources/
-    └── features/
-    ├── notification.feature
-    ├── order.feature
-    ├── product.feature
-    ├── report.feature
-    └── user.feature
+        ├── java/
+        │   ├── steps/
+        │   │   ├── NotificationSteps
+        │   │   ├── OrderSteps
+        │   │   ├── ProductSteps
+        │   │   ├── ReportSteps
+        │   │   └── UserSteps
+        │   └── RunnerTest
+        └── resources/
+            └── features/
+                ├── notification.feature
+                ├── order.feature
+                ├── product.feature
+                ├── report.feature
+                └── user.feature
 ```
 
 ## Installation
