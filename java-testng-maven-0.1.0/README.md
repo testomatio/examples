@@ -1,38 +1,43 @@
-# Java reporter integration with JUnit5
+# Java reporter integration with TestNG
 
 ## Overview
 
 This simple demo shows how Testomat.io Java reporter works in your project.
 
-- Includes a pack of 90 tests. Some will fail on purpose and other will be disabled for demo.
+- Includes a pack of 50 tests. Some will fail on purpose and other will be disabled for demo.
 
 ## Structure
 
 ```
-src/
-├── main/
-│   ├── java/
-│   │   └── com/library/
-│   │       ├── util/
-│   │       │   └── BookUtils.java
-│   │       ├── Author.java
-│   │       ├── Book.java
-│   │       ├── Genre.java
-│   │       ├── Library.java
-│   │       ├── LibraryCard.java
-│   │       ├── Loan.java
-│   │       ├── Publisher.java
-│   │       └── Reader.java
-│   └── resources/
-│       └── junit-platform.properties
-└── test/
-    └── java/
-        └── library/
-            ├── AuthorTest.java
-            ├── BookTest.java
-            ├── LibraryTest.java
-            ├── LoanTest.java
-            └── ReaderTest.java
+
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── library/
+│   │   │           ├── util/
+│   │   │           │   └── BookUtils.java
+│   │   │           ├── Author.java
+│   │   │           ├── Book.java
+│   │   │           ├── Genre.java
+│   │   │           ├── Library.java
+│   │   │           ├── LibraryCard.java
+│   │   │           ├── Loan.java
+│   │   │           ├── Publisher.java
+│   │   │           └── Reader.java
+│   │   └── resources/
+│   │       └── testomatio.properties
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── library/
+│                   ├── AuthorTest.java
+│                   ├── BookTest.java
+│                   ├── BookUtilsTest.java
+│                   ├── GenreTest.java
+│                   └── LibraryTest.java
+├── pom.xml
+└── README.md
 ```
 
 ## Installation
@@ -41,7 +46,7 @@ src/
 
 ```sh
   git clone <repo-url>
-  cd java-junit-maven-0.1.0
+  cd java-testng-maven-0.1.0
 ```
 
 2. Install dependencies (run it in Bash)
@@ -66,11 +71,7 @@ You can pass your custom properties as JVM properties, OS env variables or in th
 
 The file, if you want to use this approach, must be created int the `main/resources` folder.
 
-To let JUnit run extension automatically - you will need to add this line into your **junit-platform.properties** file:
-
-```properties
-junit.jupiter.extensions.autodetection.enabled=true
-```
+The extension will run if you provide `testomatio.api.key` as a property in test run config or `mvn test`
 
 - Optionally, in the `testomatio.properties` file can configure run parameters:
 
