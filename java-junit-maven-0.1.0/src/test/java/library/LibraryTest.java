@@ -1,4 +1,4 @@
-package library.junit;
+package library;
 
 import com.library.Author;
 import com.library.Book;
