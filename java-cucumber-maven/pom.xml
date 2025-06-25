@@ -19,6 +19,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.opentest4j</groupId>
+            <artifactId>opentest4j</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
@@ -52,7 +57,7 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <includes>
-                        <include>**/RunnerTest.java</include>
+                        <include>**/TestRunner.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>

@@ -24,7 +24,7 @@ This simple demo shows how Testomat.io Java reporter works in your project.
         │   │   ├── ProductSteps
         │   │   ├── ReportSteps
         │   │   └── UserSteps
-        │   └── RunnerTest
+        │   └── TestRunner
         └── resources/
             └── features/
                 ├── notification.feature
@@ -43,13 +43,9 @@ This simple demo shows how Testomat.io Java reporter works in your project.
   cd java-cucumber-maven
 ```
 
-2. Install dependencies
+2. Install dependencies (run this commands in Bash)
 ```sh
-    mvn install:install-file\ 
-    -Dfile=lib/java-reporter-0.1.0.jar\ 
-    -Dversion=0.1.0 -Dpackaging=jar\
-    -Dgroup=com.testomatio.reporter\
-    -DartifactId=java-reporter
+    mvn install:install-file -Dfile=lib/java-reporter-0.1.0.jar -Dversion=0.1.0 -Dpackaging=jar -Dgroup=com.testomatio.reporter -DartifactId=java-reporter
 ```
 ```sh
     mvn clean
