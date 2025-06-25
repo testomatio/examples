@@ -44,14 +44,10 @@ src/
   cd java-junit-maven-0.1.0
 ```
 
-2. Install dependencies
+2. Install dependencies (run it in Bash)
 
 ```sh
-    mvn install:install-file\ 
-    -Dfile=lib/java-reporter-0.1.0.jar\ 
-    -Dversion=0.1.0 -Dpackaging=jar\
-    -Dgroup=com.testomatio.reporter\
-    -DartifactId=java-reporter
+    mvn install:install-file -Dfile=lib/java-reporter-0.1.0.jar -Dversion=0.1.0 -Dpackaging=jar -Dgroup=com.testomatio.reporter -DartifactId=java-reporter
 ```
 
 ```sh
