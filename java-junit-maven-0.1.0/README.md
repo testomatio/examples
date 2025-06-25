@@ -1,4 +1,4 @@
-# Java reporter integration with Cucumber-JVM (JUnit5)
+# Java reporter integration with JUnit5
 
 ## Overview
 
@@ -65,7 +65,9 @@ src/
 ## Configurations
 
 **By default, the library runs with properties default values except `testomatio.api.key`**
+
 You can pass your custom properties as JVM properties, OS env variables or in the `testomatio.properties` file.
+
 The file, if you want to use this approach, must be created int the `main/resources` folder.
 
 To let JUnit run extension automatically - you will need to add this line into your **junit-platform.properties** file:
