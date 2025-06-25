@@ -88,7 +88,7 @@ And the default is "Default run title", so you might want to change it.
 ## Run
 Run tests with
 ```sh
-   mvn test -D=tstmt_key
+   mvn test -Dtestomatio.api.key=tstmt_key
 ```
 where `tstmt_key` is your Testomat.io key from a particular project.
 
