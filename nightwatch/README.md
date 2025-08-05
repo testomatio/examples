@@ -4,7 +4,16 @@
 
 `npm install`
 
+### Import Tests
+
+```
+TESTOMATIO={apiKey} npx check-tests@latest nightwatch "nightwatch/*.ts" --typescript
+````
+
+
 ### Run tests
 
-`TESTOMATIO={apiKey} npx nightwatch --reporter @testomatio/reporter/nightwatch`
-git 
+````
+TESTOMATIO={apiKey} npx nightwatch --reporter @testomatio/reporter/nightwatch
+```
+
