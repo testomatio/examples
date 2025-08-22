@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "pretty",
                 "json:target/cucumber-reports/cucumber.json",
                 "html:target/cucumber-reports/report",
-                "com.testomatio.reporter.core.framework_integration.CucumberListener"
+                "io.testomat.cucumber.listener.CucumberListener"
         }
 )
 public class TestRunner {

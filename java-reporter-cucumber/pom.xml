@@ -19,11 +19,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.opentest4j</groupId>
-            <artifactId>opentest4j</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-        <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
@@ -42,10 +37,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.testomatio.reporter</groupId>
-            <artifactId>java-reporter</artifactId>
-            <version>0.1.0</version>
-            <scope>test</scope>
+            <groupId>io.testomat</groupId>
+            <artifactId>java-reporter-cucumber</artifactId>
+            <version>0.7.2</version>
         </dependency>
     </dependencies>
 
