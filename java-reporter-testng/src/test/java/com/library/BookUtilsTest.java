@@ -1,8 +1,8 @@
 package com.library;
 
 import com.library.util.BookUtils;
-import com.testomatio.reporter.annotation.TestId;
-import com.testomatio.reporter.annotation.Title;
+import io.testomat.core.annotation.TestId;
+import io.testomat.core.annotation.Title;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;

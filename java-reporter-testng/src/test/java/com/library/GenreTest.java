@@ -1,7 +1,7 @@
 package com.library;
 
-import com.testomatio.reporter.annotation.TestId;
-import com.testomatio.reporter.annotation.Title;
+import io.testomat.core.annotation.TestId;
+import io.testomat.core.annotation.Title;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
