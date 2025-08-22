@@ -18,6 +18,11 @@ This simple demo shows how Testomat.io Java reporter works in your project.
 ```sh
   cd java-reporter-junit
 ```
+3. Install dependencies with test skip
+
+```sh
+  mvn clean install -DskipTests
+```
 
 
 ## Configurations
