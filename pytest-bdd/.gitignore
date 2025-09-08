@@ -1,0 +1,13 @@
+# Logs
+logs
+
+#env
+venv/
+.env
+.venv
+
+# byte-compiled files
+__pycache__/
+
+#ide
+.idea/
