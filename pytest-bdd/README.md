@@ -13,7 +13,7 @@ pip install -r requirements.txt
 2. Obtain API key from Testomat.io
 3. Run `npx check-cucumber` to upload tests data into testomat.io. Pass api key as `TESTOMATIO` environment variable:
 ```bash
-TESTOMATIO={apiKey} npx check-cucumber@latest "**/*.feature" --dir features
+TESTOMATIO={apiKey} npx check-cucumber@latest "**/*.feature" --dir features --update-ids
 ```
 ## Reporting tests results to Testomat.io:
 ```bash
