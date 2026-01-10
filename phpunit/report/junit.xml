@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="22" assertions="23" errors="0" warnings="0" failures="0" skipped="0" time="0.015253">
+    <testsuite name="PHPUnit Example Test Suite" tests="22" assertions="23" errors="0" warnings="0" failures="0" skipped="0" time="0.015253">
+      <testsuite name="App\Tests\CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" tests="12" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="0.008569">
+        <testcase name="testAddition" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="21" assertions="1" time="0.004411"/>
+        <testcase name="testAdditionWithNegativeNumbers" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="31" assertions="1" time="0.000530"/>
+        <testcase name="testSubtraction" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="41" assertions="1" time="0.000686"/>
+        <testcase name="testMultiplication" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="51" assertions="1" time="0.000105"/>
+        <testcase name="testDivision" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="61" assertions="1" time="0.000501"/>
+        <testcase name="testDivisionByZeroThrowsException" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="71" assertions="2" time="0.000752"/>
+        <testcase name="testAdditionWithPositiveNumbers" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="82" assertions="1" time="0.000127"/>
+        <testcase name="testAdditionWithNegatives" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="92" assertions="1" time="0.000121"/>
+        <testcase name="testAdditionWithMixedNumbers" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="102" assertions="1" time="0.000162"/>
+        <testcase name="testAdditionWithDecimals" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="112" assertions="1" time="0.000175"/>
+        <testcase name="testAdditionWithZero" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="122" assertions="1" time="0.000513"/>
+        <testcase name="testPercentage" class="App\Tests\CalculatorTest" classname="App.Tests.CalculatorTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/CalculatorTest.php" line="132" assertions="1" time="0.000486"/>
+      </testsuite>
+      <testsuite name="App\Tests\UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" tests="10" assertions="10" errors="0" warnings="0" failures="0" skipped="0" time="0.006684">
+        <testcase name="testValidEmailFormat" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="17" assertions="1" time="0.002312"/>
+        <testcase name="testInvalidEmailFormat" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="27" assertions="1" time="0.001022"/>
+        <testcase name="testStrongPassword" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="37" assertions="1" time="0.000515"/>
+        <testcase name="testWeakPassword" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="47" assertions="1" time="0.000320"/>
+        <testcase name="testUsernameValidationWithValidUsername" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="57" assertions="1" time="0.000522"/>
+        <testcase name="testUsernameValidationWithAlphanumeric" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="67" assertions="1" time="0.000214"/>
+        <testcase name="testUsernameValidationTooShort" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="77" assertions="1" time="0.000469"/>
+        <testcase name="testUsernameValidationWithSpaces" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="87" assertions="1" time="0.000552"/>
+        <testcase name="testUsernameValidationWithSpecialChars" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="97" assertions="1" time="0.000407"/>
+        <testcase name="testUsernameValidationEmpty" class="App\Tests\UserRegistrationTest" classname="App.Tests.UserRegistrationTest" file="/Users/o.pelykh/projects/testomat.io/examples/phpunit/tests/UserRegistrationTest.php" line="107" assertions="1" time="0.000351"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
