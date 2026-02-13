@@ -16,8 +16,10 @@
   "author": "davert, mihaylukvv",
   "license": "ISC",
   "dependencies": {
-    "@playwright/test": "^1.46.1",
     "@testomatio/reporter": "^1.4.10",
     "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
   }
 }

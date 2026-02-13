@@ -6,15 +6,15 @@ logger.configure({
   prettyObjects: true,
 });
 
-test.describe('Logger', () => {
-  test(`logger`, async () => {
+test.describe('Logger @S5a1a655a', () => {
+  test(`logger @T1aec9398`, async () => {
     logger.warn('testomatio logger warn message');
     console.log('console log message');
 
 
   });
 
-  test(`simple log`, async () => {
+  test(`simple log @Td5ca7452`, async () => {
     log`This is log message`;
   });
 });
