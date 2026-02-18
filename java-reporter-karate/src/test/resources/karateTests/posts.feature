@@ -4,21 +4,21 @@ Feature: Posts API
     * url 'https://jsonplaceholder.typicode.com'
     * def assertStatus = Java.type('helpers.AssertStatus')
 
-  @Title:Get_all_posts @TtestId:Tpost0001 @attachments:logs/karate.log
+  @Title:Get_all_posts @TestId:Tpost0001 @attachments:logs/karate.log
   Scenario: Get all posts
     Given path 'posts'
     When method get
     Then eval assertStatus.checkStatusCode(responseStatus, 200)
     And match response[0].id != null
 
-  @Title:Get_single_post @TtestId:Tpost0002
+  @Title:Get_single_post @TestId:Tpost0002
   Scenario: Get single post
     Given path 'posts', 1
     When method get
     Then eval assertStatus.checkStatusCode(responseStatus, 200)
     And match response.id == 1
 
-  @Title:Get_comments_for_post @TtestId:Tpost0003
+  @Title:Get_comments_for_post @TestId:Tpost0003
   Scenario: Get comments for post
     Given path 'posts', 1, 'comments'
     When method get
@@ -38,7 +38,7 @@ Feature: Posts API
       | 2  | Tpost0042 |
       | 3  | Tpost0043 |
 
-  @Title:Create_post @TtestId:Tpost0005
+  @Title:Create_post @TestId:Tpost0005
   Scenario: Create post
     Given path 'posts'
     And request { title: 'foo', body: 'bar', userId: 1 }
