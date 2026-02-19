@@ -1,5 +1,6 @@
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
+import hooks.MyHook;
 import io.testomat.karate.hooks.KarateHookFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,10 +11,10 @@ class KarateTest {
     void testParallel() {
 
         Results results = Runner.path("classpath:karateTests")
-            .hookFactory(new KarateHookFactory())
+            .hookFactory(KarateHookFactory.create(MyHook::new))
             .outputCucumberJson(true)
             .outputJunitXml(true)
-            .parallel(1);
+            .parallel(4);
 
         Assertions.assertEquals(
             0,
