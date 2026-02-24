@@ -1,3 +1,5 @@
+# used for Testomatio CI functionality testing
+
 name: testomatio-ci-test
 
 on:
