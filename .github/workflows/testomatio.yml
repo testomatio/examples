@@ -1,0 +1,37 @@
+# used for Testomatio CI functionality testing
+
+name: testomatio-ci-test
+
+on:
+  workflow_dispatch:
+    inputs:
+      grep:
+        description: 'tests to grep'
+        required: false
+        default: ''
+      run:
+        required: false
+        default: ''
+      testomatio:
+        required: false
+        default: ''
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - run: npx playwright install --with-deps
+
+      - run: npx playwright test --grep "${{ github.event.inputs.grep }}"
+        env:
+          TESTOMATIO: "${{ github.event.inputs.testomatio }}"
+          TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
