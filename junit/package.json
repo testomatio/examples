@@ -10,6 +10,6 @@
     "test": "echo \"Refer to Testomat.io docs\" && exit 1"
   },
   "dependencies": {
-    "@testomatio/reporter": "^1.6.11"
+    "@testomatio/reporter": "file:../../reporter/testomatio-reporter-2.6.2.tgz"
   }
 }

@@ -35,7 +35,7 @@ jobs:
 
       - run: npm i
 
-      - run: npx playwright install --with-deps
+      - run: npx playwright install chromium --with-deps
 
       - run: npx playwright test --grep "${{ github.event.inputs.grep }}"
         env:
