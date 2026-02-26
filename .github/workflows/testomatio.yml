@@ -21,10 +21,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-      packages: write
+    # permissions:
+    #   id-token: write
+    #   contents: read
+    #   packages: write
     defaults:
       run:
         working-directory: ci-test
