@@ -25,6 +25,9 @@ jobs:
       id-token: write
       contents: read
       packages: write
+    defaults:
+      run:
+        working-directory: ci-test
 
     steps:
       - uses: actions/checkout@v4
