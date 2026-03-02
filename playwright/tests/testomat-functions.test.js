@@ -1,12 +1,12 @@
 import { test } from '@playwright/test';
 import testomat from '@testomatio/reporter';
 
-test.describe('Testomat functions @Se31218e3', () => {
-  test('artifact @T64346bdd', async () => {
+test.describe('Testomat functions', () => {
+  test('artifact', async () => {
     testomat.artifact('artifacts/artifact-test-image.png');
   });
 
-  test('testomat log @T917de9d8', async () => {
+  test('testomat log', async () => {
     testomat.log`This is log message`;
   });
 });

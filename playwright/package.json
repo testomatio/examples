@@ -16,7 +16,7 @@
   "author": "davert, mihaylukvv",
   "license": "ISC",
   "dependencies": {
-    "@testomatio/reporter": "^1.4.10",
+    "@testomatio/reporter": "^2.6.3",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
