@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import io.testomat.core.annotation.TestId;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -57,7 +55,6 @@ public class ArgumentsSourceParameterizedTests {
 
     @ParameterizedTest(name = "Person: {0}, Age: {1}, Role: {2}")
     @ArgumentsSource(PersonArgumentsProvider.class)
-    @TestId("0952de9d")
     void testPersonDataValidation(String name, int age, String role) {
         assertNotNull(name);
         assertTrue(age > 18);
@@ -68,7 +65,6 @@ public class ArgumentsSourceParameterizedTests {
 
     @ParameterizedTest(name = "Numbers: {0} and {1}")
     @ArgumentsSource(NumberPairsProvider.class)
-    @TestId("024b1ab3")
     void testNumberPairOperations(int first, int second) {
         assertTrue(first < second);
         assertTrue(first + second > 0);
@@ -77,7 +73,6 @@ public class ArgumentsSourceParameterizedTests {
 
     @ParameterizedTest(name = " Product: {0}, Price: ${1}, Smartphone: {2}")
     @ArgumentsSource(ProductDataProvider.class)
-    @TestId("d8852398")
     void testProductValidation(String productName, double price, boolean isSmartphone) {
         assertNotNull(productName);
         assertTrue(price > 0);
@@ -89,7 +84,6 @@ public class ArgumentsSourceParameterizedTests {
 
     @ParameterizedTest(name = "Math: {0} + {1} = {2}, {0} * {1} = {3}")
     @ArgumentsSource(CalculationProvider.class)
-    @TestId("83312e71")
     void testMathematicalOperations(int a, int b, int sum, int product) {
         assertEquals(sum, a + b);
         assertEquals(product, a * b);
@@ -99,7 +93,6 @@ public class ArgumentsSourceParameterizedTests {
 
     @ParameterizedTest(name = "String: {0}, Valid: {1}")
     @ArgumentsSource(StringValidationProvider.class)
-    @TestId("d966ee94")
     void testStringValidation(String input, boolean isValid) {
         assertNotNull(input);
         if (isValid) {

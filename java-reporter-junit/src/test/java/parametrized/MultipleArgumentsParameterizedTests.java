@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-
-import io.testomat.core.annotation.TestId;
 import java.time.LocalDate;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -36,7 +34,6 @@ public class MultipleArgumentsParameterizedTests {
 
     @ParameterizedTest(name = "User data validation: {0}, {1}, age {2}, {3}, salary ${4}")
     @MethodSource("provideComplexUserData")
-    @TestId("c1d93773")
     void testComplexUserDataValidation(String username, String email, int age, String position, double salary) {
         assertNotNull(username);
         assertNotNull(email);
@@ -52,7 +49,6 @@ public class MultipleArgumentsParameterizedTests {
 
     @ParameterizedTest(name = "Order calculation: {0} x{1} at ${2} with {3}% discount = ${4}")
     @MethodSource("provideOrderCalculations")
-    @TestId("23e11530")
     void testOrderTotalCalculation(String item, int quantity, double unitPrice, double discount, double expectedTotal) {
         assertNotNull(item);
         assertTrue(quantity > 0);
@@ -66,7 +62,6 @@ public class MultipleArgumentsParameterizedTests {
 
     @ParameterizedTest(name = "Date range: {0} to {1} = {2} days")
     @MethodSource("provideDateRangeData")
-    @TestId("d7d5b24e")
     void testDateRangeCalculations(String startDateStr, String endDateStr, int expectedDays) {
         LocalDate startDate = LocalDate.parse(startDateStr);
         LocalDate endDate = LocalDate.parse(endDateStr);
@@ -79,7 +74,6 @@ public class MultipleArgumentsParameterizedTests {
 
     @ParameterizedTest(name = "Geometry: {0} {1}x{2} area={3} perimeter={4}")
     @MethodSource("provideGeometryData")
-    @TestId("2a147b77")
     void testGeometricCalculations(String shape, double width, double height, double expectedArea, double expectedPerimeter) {
         assertNotNull(shape);
         assertTrue(width > 0);
@@ -105,7 +99,6 @@ public class MultipleArgumentsParameterizedTests {
 
     @ParameterizedTest(name = "Password validation: '{0}' minLen={1} digits={2} lower={3} upper={4}")
     @MethodSource("provideValidationScenarios")
-    @TestId("51cbaba3")
     void testPasswordValidation(String password, int minLength, boolean hasDigits, boolean hasLower, boolean hasUpper) {
         assertNotNull(password);
         assertTrue(password.length() >= minLength);
