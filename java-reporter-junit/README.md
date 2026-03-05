@@ -1,4 +1,4 @@
-# Java reporter integration with JUnit5
+# Java reporter integration with JUnit
 
 ## Overview
 
@@ -14,7 +14,7 @@ This simple demo shows how Testomat.io Java reporter works in your project.
   git clone https://github.com/testomatio/examples.git
   ```
 2. Change the directory
-  
+
 ```sh
   cd java-reporter-junit
 ```
@@ -27,9 +27,11 @@ This simple demo shows how Testomat.io Java reporter works in your project.
 
 ## Configurations
 
-**By default, the library runs with properties default values except `testomatio.api.key` and `testomatio.listening`**
+**By default, the library runs with properties default values except `testomatio`**  
+`testomatio` is the api key of the particular project on the [Testomat.io](https://app.testomat.io) platform.  
+The reporting will be enabled automatically if the api key is provided.  
+(you can also provide the key as JVM property `-Dtestomatio` or environment variable TESTOMATIO)
 
-![properties image](img/properties.png)
 
 Add your project API key to the `testomatio.properties` file ad `testomatio.api.key`
 
@@ -44,8 +46,15 @@ Run tests with
 where `tstmt_key` is your Testomat.io key from a particular project.
 
 As a result, you will see a run report in your Project tab -> Runs on Testomat.io.
+![run-result-img](img/runReport.png)
 
-<div align="center">
-  <img src="img/runReport.png" alt="demo report result png" style="max-width: 70%; max-height: 420px;">
-</div>
+As you can see, there is the `testomatio.artifact.disable=1` line in the `testomatio.properties` file.  
+It disables the artifact handling by the reporter. Remove the value to enable or change it to "0".  
+But for the reporter to handle the artifacts, you must add values to S3 related properties in the `testomatio.properties`  
+file or provide them as JVM properties or ENV variables.
+But the most convenient way is to set these values on the [Testomat.io](https://beta.testomat.io) platform:  
+![artifact-settings-img](img/artifact_settings_ui.png)
+
+After all that done remove value from `testomatio.artifact.disable` or remove it completely and run test including WebDriverArtifactTest class.  
+![artifact run result img](img/artifact_run_result.png)
 
