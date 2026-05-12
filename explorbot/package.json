@@ -1,0 +1,20 @@
+{
+  "name": "explorbot-example",
+  "version": "1.0.0",
+  "description": "Example project for testing Explorbot — the AI-powered web exploration agent",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "explorbot": "explorbot",
+    "start": "explorbot start /",
+    "start:login": "explorbot start /inventory.html --session",
+    "explore": "explorbot explore /",
+    "freesail": "explorbot freesail / --shallow",
+    "learn": "explorbot learn",
+    "init": "explorbot init"
+  },
+  "dependencies": {
+    "@openrouter/ai-sdk-provider": "^2.9.0",
+    "explorbot": "file:../../explorbot/dist"
+  }
+}
