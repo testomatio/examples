@@ -41,6 +41,18 @@ public class InventoryPage {
     private final SelenideElement logoutLink =
         $("#logout_sidebar_link");
 
+    private final ElementsCollection inventoryItemsImgs =
+        $$(".inventory_item_img img");
+
+    private final SelenideElement inventoryDetailsImgs =
+        $(".inventory_details_img img");
+
+    private final SelenideElement inventoryDetailsName =
+        $(".inventory_details_name");
+
+    private final SelenideElement inventoryList =
+        $(".inventory_list");
+
     public InventoryPage verifyPageLoaded() {
         title.shouldHave(text("Products"));
         inventoryItems.shouldHave(sizeGreaterThan(0));
@@ -59,7 +71,6 @@ public class InventoryPage {
     }
 
     public List<String> getItemPrices() {
-
         return itemPrices.texts();
     }
 
@@ -71,7 +82,6 @@ public class InventoryPage {
     }
 
     public InventoryPage addFirstItemToCart() {
-
         addToCartButtons.first().click();
 
         return this;
@@ -98,5 +108,29 @@ public class InventoryPage {
         logoutLink.shouldBe(visible).click();
 
         return new LoginPage();
+    }
+
+    public ElementsCollection getInventoryItemsImgs() {
+        return inventoryItemsImgs;
+    }
+
+    public SelenideElement getInventoryDetailsImgs() {
+        return inventoryDetailsImgs;
+    }
+
+    public SelenideElement getInventoryDetailsName() {
+        return inventoryDetailsName;
+    }
+
+    public void inventoryListShouldVisible() {
+        inventoryList.shouldBe(visible);
+    }
+
+    public ElementsCollection getCartButtons() {
+        return addToCartButtons;
+    }
+
+    public ElementsCollection getItemPriceElements() {
+        return itemPrices;
     }
 }

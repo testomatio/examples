@@ -1,6 +1,7 @@
 package io.testomat.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.testomat.config.Urls;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -9,7 +10,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage {
 
-    private final SelenideElement rootContainer = $("[data-test='login-container']");
     private final SelenideElement usernameInput = $("#user-name");
     private final SelenideElement passwordInput = $("#password");
     private final SelenideElement loginButton = $("#login-button");
@@ -17,7 +17,7 @@ public class LoginPage {
     private final SelenideElement errorMessage = $("h3[data-test='error']");
 
     public LoginPage openPage() {
-        open("https://www.saucedemo.com/");
+        open(Urls.BASE_URL);
 
         return this;
     }

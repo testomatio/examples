@@ -31,6 +31,9 @@ public class ProductPage {
     private final SelenideElement cartBadge =
         $(".shopping_cart_badge");
 
+    private final SelenideElement productSortContainer =
+        $(".product_sort_container");
+
     public ProductPage verifyPageLoaded() {
 
         productName.shouldBe(visible);
@@ -78,16 +81,22 @@ public class ProductPage {
     }
 
     public ProductPage verifyCartBadge(String count) {
-
         cartBadge.shouldHave(text(count));
 
         return this;
     }
 
     public InventoryPage clickBackButton() {
-
         backButton.click();
 
         return new InventoryPage();
+    }
+
+    public SelenideElement getCartBadge() {
+        return cartBadge;
+    }
+
+    public void productSortContainerShouldVisible() {
+        productSortContainer.shouldBe(visible);
     }
 }

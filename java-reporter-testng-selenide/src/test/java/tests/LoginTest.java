@@ -2,12 +2,15 @@ package tests;
 
 import static com.codeborne.selenide.Condition.attributeMatching;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
 import base.BaseTest;
+import io.testomat.config.Urls;
 import io.testomat.data.Users;
+import io.testomat.pages.CartPage;
+import io.testomat.pages.InventoryPage;
+import io.testomat.pages.ProductPage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -53,7 +56,6 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void performanceUserShouldLoginSuccessfully() {
-
         long start = System.currentTimeMillis();
 
         new LoginPage()
@@ -63,12 +65,9 @@ public class LoginTest extends BaseTest {
             .clickLogin()
             .verifyPageLoaded();
 
-        long elapsed =
-            System.currentTimeMillis() - start;
+        long elapsed = System.currentTimeMillis() - start;
 
-        Assert.assertTrue(
-            elapsed > 2000
-        );
+        Assert.assertTrue(elapsed > 2000);
     }
 
     @Test
@@ -110,8 +109,8 @@ public class LoginTest extends BaseTest {
     @Test
     public void errorUserShouldNavigateToProductPage() {
         LoginSteps.loginAs(Users.ERROR_USER);
-        open("https://www.saucedemo.com/inventory-item.html?id=4");
-        $(".inventory_details_name").shouldBe(visible);
+        open(Urls.inventoryItemUrl(4));
+        new LoginSteps().getInventoryDetailsName().shouldBe(visible);
     }
 
     @Test
@@ -123,11 +122,8 @@ public class LoginTest extends BaseTest {
     public void visualUserShouldSeeMainElements() {
         LoginSteps.loginAs(Users.VISUAL_USER);
 
-        $(".inventory_list").shouldBe(visible);
-        $(".shopping_cart_link").shouldBe(visible);
-        $(".product_sort_container").shouldBe(visible);
+        new InventoryPage().inventoryListShouldVisible();
+        new CartPage().cartLinkShouldVisible();
+        new ProductPage().productSortContainerShouldVisible();
     }
-
-
-
 }

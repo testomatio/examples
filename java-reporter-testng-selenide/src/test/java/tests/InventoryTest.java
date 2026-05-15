@@ -1,16 +1,15 @@
 package tests;
 
 import static com.codeborne.selenide.Condition.empty;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 import base.BaseTest;
+import io.testomat.config.Urls;
+import io.testomat.steps.InventorySteps;
 import java.util.Comparator;
 import java.util.List;
 import org.testng.Assert;
@@ -122,8 +121,8 @@ public class InventoryTest extends BaseTest {
 
     @Test
     public void userShouldNotAccessInventoryWithoutLogin() {
-        open("https://www.saucedemo.com/inventory.html");
-        webdriver().shouldHave(url("https://www.saucedemo.com/"));
+        open(Urls.INVENTORY_URL);
+        webdriver().shouldHave(url(Urls.BASE_URL));
     }
 
     @Test
@@ -149,13 +148,17 @@ public class InventoryTest extends BaseTest {
 
     @Test
     public void allProductImagesShouldBeVisible() {
-        $$(".inventory_item_img img").forEach(img -> img.shouldBe(visible));
+        new InventoryPage()
+            .getInventoryItemsImgs()
+            .forEach(img ->
+                img.shouldBe(visible));
     }
 
     @Test
     public void addToCartButtonsShouldBeVisible() {
         LoginSteps.loginAsStandardUser();
-        $$("button[id^='add-to-cart']")
+        new InventoryPage()
+            .getCartButtons()
             .forEach(btn ->
                 btn.shouldBe(visible));
     }
@@ -163,7 +166,8 @@ public class InventoryTest extends BaseTest {
     @Test
     public void allPricesShouldBeVisible() {
         LoginSteps.loginAsStandardUser();
-        $$(".inventory_item_price")
+        new InventoryPage()
+            .getItemPriceElements()
             .forEach(price ->
                 price.shouldNotBe(empty)
             );
@@ -175,7 +179,8 @@ public class InventoryTest extends BaseTest {
             .addFirstItemToCart();
         refresh();
 
-        $(".shopping_cart_badge")
-            .shouldHave(text("1"));
+        Assert.assertEquals(
+            new InventorySteps().getCartBadgeAmount(),
+            "1");
     }
 }

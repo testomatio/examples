@@ -1,5 +1,6 @@
 package io.testomat.steps;
 
+import com.codeborne.selenide.SelenideElement;
 import io.testomat.data.Users;
 import io.testomat.pages.InventoryPage;
 import io.testomat.pages.LoginPage;
@@ -24,4 +25,9 @@ public class LoginSteps {
             .clickLogin()
             .verifyPageLoaded();
     }
+
+    public SelenideElement getInventoryDetailsName() {
+        return new InventoryPage().getInventoryDetailsName();
+    }
+
 }

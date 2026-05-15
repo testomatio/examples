@@ -1,6 +1,8 @@
 package tests;
 
 import base.BaseTest;
+import io.testomat.config.Urls;
+import io.testomat.pages.InventoryPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -8,7 +10,6 @@ import io.testomat.pages.LoginPage;
 import io.testomat.pages.ProductPage;
 
 import static com.codeborne.selenide.Condition.attributeMatching;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.refresh;
 import static com.codeborne.selenide.Selenide.webdriver;
@@ -26,7 +27,7 @@ public class ProductDetailsTest extends BaseTest {
     }
 
     private ProductPage openProductPage() {
-        open("https://www.saucedemo.com/inventory-item.html?id=4");
+        open(Urls.inventoryItemUrl(7));
 
         return new ProductPage()
             .verifyPageLoaded();
@@ -119,15 +120,15 @@ public class ProductDetailsTest extends BaseTest {
 
     @Test
     public void userShouldNotAccessProductPageWithoutLogin() {
-        open("https://www.saucedemo.com/inventory-item.html?id=4");
+        open(Urls.inventoryItemUrl(3));
         webdriver().shouldHave(
-            url("https://www.saucedemo.com/")
+            url(Urls.BASE_URL)
         );
     }
 
     @Test
     public void invalidProductIdShouldNotCrashApplication() {
-        open("https://www.saucedemo.com/inventory-item.html?id=999");
+        open(Urls.inventoryItemUrl(999));
     }
 
     @Test
@@ -143,9 +144,11 @@ public class ProductDetailsTest extends BaseTest {
 
     @Test
     public void imageShouldContainSrcAttribute() {
-        $(".inventory_details_img img")
+        new InventoryPage()
+            .getInventoryDetailsImgs()
             .shouldHave(attributeMatching("src", ".*"));
     }
+
     @Test
     public void addRemoveAddFlowShouldWork() {
         ProductPage page =
