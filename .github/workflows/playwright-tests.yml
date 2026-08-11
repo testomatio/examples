@@ -1,0 +1,31 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# - cron: "20 5 */2 * *"
+name: Playwright tests
+
+on:
+  pull_request
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./playwright
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Setup dependancies
+        run: npm i
+      - name: Playwright browser updates
+        run: npx playwright install
+      - name: Run tests
+        run: DEBUG=@testomatio/reporter:client, npx playwright test --repeat-each 20
+        env:
+          TESTOMATIO: "${{ secrets.TESTOMATIO_PLAYWRIGHT }}"
+          TESTOMATIO_URL: "${{ secrets.TESTOMATIO_URL }}"
